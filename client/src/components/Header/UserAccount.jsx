@@ -21,6 +21,9 @@ export default function UserAccount ({toggleAccount}) {
                 </div>
                 <div className="sidebar-account-username">{user[0].username}</div>
             </div>
+            <div className="sidebar-account-stats">
+                
+            </div>
         </div>
     )
 }
