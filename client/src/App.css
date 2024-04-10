@@ -1,42 +1,181 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  text-align: center; */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  width: 100vw;
+  display: block;
+  font-family: "Abel";
+  color: #201f1f;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Fonts - CSS */
+.text-title-32 {
+  font-family: "Bungee";
+  font-size: 32px;
+}
+.text-title-30 {
+  font-family: "Bungee";
+  font-size: 30px;
+}
+.text-title-28 {
+  font-family: "Bungee";
+  font-size: 28px;
+}
+.text-title-26 {
+  font-family: "Bungee";
+  font-size: 26px;
+}
+.text-title-24 {
+  font-family: "Bungee";
+  font-size: 24px;
+}
+.text-title-22 {
+  font-family: "Bungee";
+  font-size: 22px;
+}
+.text-title-20 {
+  font-family: "Bungee";
+  font-size: 20px;
+}
+.text-title-18{
+  font-family: "Bungee";
+  font-size: 18px;
+}
+.text-title-16 {
+  font-family: "Bungee";
+  font-size: 16px;
+}
+.text-body-22 {
+  font-family: "Abel";
+  font-size: 22px;
+}
+.text-body-20 {
+  font-family: "Abel";
+  font-size: 20px;
+}
+.text-body-18{
+  font-family: "Abel";
+  font-size: 18px;
+}
+.text-body-16 {
+  font-family: "Abel";
+  font-size: 16px;
+}
+.text-title-14 {
+  font-family: "Abel";
+  font-size: 14px;
+}
+.text-title-12 {
+  font-family: "Abel";
+  font-size: 12px;
+}
+.text-title-10 {
+  font-family: "Abel";
+  font-size: 10px;
+}
+.text-title-8 {
+  font-family: "Abel";
+  font-size: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Text Effects */
+.text-underline {
+	text-decoration: underline;
+}
+.text-italic {
+	font-style: italic;
+}
+.align-right {
+	text-align: right;
+}
+.align-left {
+	text-align: left;
+}
+.align-center {
+	text-align: center;
 }
 
-.card {
-  padding: 2em;
+/* Spacing */
+.spacing-5 {
+	margin-bottom: 5px;
+}
+.spacing-10 {
+	margin-bottom: 10px;
 }
 
-.read-the-docs {
-  color: #888;
+
+/* Header */
+.header-primary {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	margin: 20px 30px 20px 20px;
+}
+.header-app-title {
+	color: white;
+	text-decoration: none;
+}
+.header-search {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+/* Nav Sidebar */
+.sidenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  z-index: 1000;
+  /* background-image: linear-gradient(135deg, #060606, #141414, #3a3a3a, #b8b8b8); */
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  /* background-position: 0%; */
+
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+.sidenav-header {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: top;
+
+margin: 20px 20px 20px 30px;
+}
+
+/* User Sidebar */
+.sidenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  z-index: 900;
+  /* background: linear-gradient(135deg, #060606, #141414, #3a3a3a, #b8b8b8); */
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  /* background-position: 0%; */
+
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+.sidenav-header {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: top;
+
+margin: 20px 20px 20px 30px;
 }
