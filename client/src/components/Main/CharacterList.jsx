@@ -12,6 +12,7 @@ export default function Characters () {
         }
         getCharacters()
     }, [])
+    console.log(characters)
 
     const navigate = useNavigate()
 
@@ -24,15 +25,22 @@ export default function Characters () {
     } else {
         return (
             <div className='character-list-page'>
-                <div className='search-list-title'>Characters</div>
                 <div className="search-list-grid">
-                    {characters.map((character, id) => (
+                    <div className='text-title-26 search-list-title'>Characters</div>
+                    {characters.map((character) => (
                         <div className="search-list-card" onClick={() => showCharacter(character)} key={character._id}>
                             <div className="list-card-image-container">
                                 <img src={character.banner} alt={character.name} className="list-card-image"/>
                             </div>
                             <div className="list-card-info">
                                 <div className="text-title-20">{character.name}</div>
+                                {/* <div className="text-body-14">{character.world[0].name}</div> */}
+                                <div className="text-body-12">{character.owner[0].username}</div>
+                                <div className="char-des-bubble-container">
+                                    {character.designations.map((designation, index) => (
+                                        <div className="char-des-bubble" key={index}>{designation}</div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     ))}

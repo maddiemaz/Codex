@@ -396,3 +396,123 @@ body {
   margin-top: 10px;
   margin-bottom: -8px;
 }
+
+
+/* List Pages */
+.world-list-page, .user-list-page, .character-list-page {
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  justify-content: center;
+}
+.search-list-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+.search-list-title {
+  /* align-self: start; */
+  width: 380px;
+}
+.search-list-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: top;
+  overflow: hidden;
+
+  margin-top: 5px;
+  margin-bottom: 20px;
+  /* background-color: #4471eb; */
+  box-shadow: 4px 4px 10px 4px rgb(0 0 0 /8%);
+
+  width: 350px;
+  min-height: 150px;
+
+  padding: 15px;
+}
+.list-card-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 160px;
+}
+.list-card-image {
+  max-height: 250px;
+  min-height: 150px;
+  min-width: 160px;
+}
+.list-card-info {
+  /* background-color: #449aeb; */
+  width: 175px;
+  min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: hide;
+}
+.world-tag-bubble-container, .user-tag-bubble-container, .char-des-bubble-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hide;
+  max-height: 50px;
+
+  margin-bottom: 10px;
+}
+.world-tag-bubble, .user-tag-bubble, .char-des-bubble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Bungee";
+  font-size: 12px;
+
+  border-radius: 20px;
+  padding: 2px 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+
+  background-color: black;
+  color: white;
+}
+.list-card-primary-info {
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+.world-list-primary-set, .user-list-primary-set {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+.list-primary-set-icon {
+  margin-right: 8px;
+}
+.list-card-secondary-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.world-list-secondary-set {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.user-list-secondary-set {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  width: 175px;
+}
+.list-secondary-set-icon {
+  margin-right: 5px;
+}

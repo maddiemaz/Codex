@@ -3,7 +3,8 @@ const {Characters, Worlds, Users} = require('../models')
 // Reformat for owner, world, work, etc. if worldControl works
 const getAllCharacters = async (req, res) => {
     try {
-        const characters = await Characters.find()
+        // const characters = await Characters.find()
+        const characters = await Characters.find().populate('world').populate('owner')
         res.json(characters)
     } catch (e) {
         return res.status(500).send(e.message)
@@ -13,7 +14,7 @@ const getAllCharacters = async (req, res) => {
 const getCharacterbyId = async (req, res) => {
     try {
         const {id} = req.params
-        const character = await Characters.findById(id)
+        const character = await Characters.findById(id).populate('world').populate('owner')
         if (character) {
             return res.json(character)
         }
@@ -27,7 +28,7 @@ const getCharactersbyWorld = async (req, res) => {
     try {
         const {world} = req.params
         // Make sure "world: world" is valid within character schema
-        const characters = await Characters.find({world: world})
+        const characters = await Characters.find({world: world}).populate('world').populate('owner')
         if (characters) {
             return res.json(characters)
         } else {
@@ -42,7 +43,7 @@ const getCharactersbyUser = async (req, res) => {
     try {
         const {user} = req.params
         // Make sure "owner: owner" is valid within character schema
-        const characters = await Characters.find({owner: owner})
+        const characters = await Characters.find({owner: owner}).populate('world').populate('owner')
         if (characters) {
             return res.json(characters)
         } else {
@@ -98,16 +99,16 @@ const characterSearch = async (req, res) => {
 
         const owner = await Users.find({$or: [{characters_owned: {$regex: regex}}]})
         const world = await Worlds.find({$or: [{characters: {$regex: regex}}]})
-        const characters = await Characters.find({name: {$regex}})
+        const characters = await Characters.find({name: {$regex}}).populate('world').populate('owner')
 
         let searchOwner = []
         let searchWorld = []
 
         if (owner.length > 0) {
-            searchLocation = await Characters.find({owner: owner[0]._id})
+            searchLocation = await Characters.find({owner: owner[0]._id}).populate('world').populate('owner')
         }
         if (world.length > 0) {
-            searchWorld = await Characters.find({world: world[0]._id})
+            searchWorld = await Characters.find({world: world[0]._id}).populate('world').populate('owner')
         }
         let combinedArray = []
 

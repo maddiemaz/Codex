@@ -12,9 +12,9 @@ export default function World () {
         }
         getWorlds()
     }, [])
+    console.log(worlds)
 
     const navigate = useNavigate()
-
     const showType = (world) => {
         navigate(`${world._id}`)
     }
@@ -24,8 +24,8 @@ export default function World () {
     } else {
         return (
             <div className='world-list-page'>
-                <div className='search-list-title'>Worlds</div>
                 <div className="search-list-grid">
+                    <div className='text-title-26 search-list-title'>Worlds</div>
                     {worlds.map((world) => (
                         <div className="search-list-card" onClick={() => showType(world)} key={world._id}>
                             <div className="list-card-image-container">
@@ -34,31 +34,31 @@ export default function World () {
                             <div className="list-card-info">
                                 <div className="text-title-20">{world.name}</div>
                                 <div className="world-tag-bubble-container">
-                                    {world.tags.map((tag) => (
-                                        <div className="world-tag-bubble">{world.tag}</div>
+                                    {world.tags.map((tag, index) => (
+                                        <div className="world-tag-bubble" key={index}>{tag}</div>
                                     ))}
                                 </div>
                                 <div className="list-card-primary-info">
                                     <div className="world-list-primary-set">
-                                        <div className="world-list-primary-set-icon">#</div>
+                                        <div className="list-primary-set-icon">{world.works.length}</div>
                                         <div className="text-body-14">Works</div>
                                     </div>
                                     <div className="world-list-primary-set">
-                                        <div className="world-list-primary-set-icon">#</div>
+                                        <div className="list-primary-set-icon">#</div>
                                         <div className="text-body-14">Characters</div>
                                     </div>
                                 </div>
                                 <div className="list-card-secondary-info">
                                     <div className="world-list-secondary-set">
-                                        <div className="world-list-secondary-set-icon">#</div>
+                                        <div className="list-secondary-set-icon">{world.owner.length}</div>
                                         <div className="text-body-10">Owners</div>
                                     </div>
                                     <div className="world-list-secondary-set">
-                                        <div className="world-list-secondary-set-icon">#</div>
+                                        <div className="list-secondary-set-icon">{world.editor.length}</div>
                                         <div className="text-body-10">Editors</div>
                                     </div>
                                     <div className="world-list-secondary-set">
-                                        <div className="world-list-secondary-set-icon">#</div>
+                                        <div className="list-secondary-set-icon">#</div>
                                         <div className="text-body-10">Private</div>
                                     </div>
                                 </div>
