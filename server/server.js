@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3001
 const userControl = require('./controllers/userControl')
 const worldControl = require('./controllers/worldControl')
 const charControl = require('./controllers/charControl')
-const specControl = require('./controllers/specControl')
+// const specControl = require('./controllers/specControl')
 // const workControl = require('./controllers/workControl')
 
 const app = express()
@@ -40,12 +40,12 @@ app.get('/search/:search', charControl.universalSearch)
 // Find All Routes - All
 app.get('/worlds', worldControl.getAllWorlds)
 app.get('/characters', charControl.getAllCharacters)
-app.get('/specs', specControl.getAllSpecs)
+// app.get('/specs', specControl.getAllSpecs)
 // app.get('/works', workControl.getAllWorks)
 // Find by ID Routes - All
 app.get('/worlds/:id', worldControl.getWorldbyId)
 app.get('/characters/:id', charControl.getCharacterbyId)
-app.get('/specs/id/:id', specControl.getSpecbyId) // Not sure if the extra /id is needed here, or on the others
+// app.get('/specs/id/:id', specControl.getSpecbyId) // Not sure if the extra /id is needed here, or on the others
 // app.get('/works/:id', workControl.getWorkbyId)
 
 // Find by Name Routes - All (need a better search function) **
@@ -53,8 +53,8 @@ app.get('/specs/id/:id', specControl.getSpecbyId) // Not sure if the extra /id i
 
 // Find Characters by World
 app.get('characters/worlds/:world', charControl.getCharactersbyWorld) // don't love this formatting
-// Find Specs by Character
-app.get('specs/characters/:character', specControl.getSpecsbyCharacter)
+// // Find Specs by Character
+// app.get('specs/characters/:character', specControl.getSpecsbyCharacter)
 // // Find Works by World
 // app.get('works/worlds/:world', workControl.getWorksbyWorld)
 
@@ -67,10 +67,10 @@ app.delete('/worlds/:id', worldControl.deleteWorld)
 app.post('/characters', charControl.createCharacter)
 app.patch('/characters/:id', charControl.updateCharacter)
 app.delete('/characters/:id', charControl.deleteCharacter)
-//CRUD Routes - Specs
-app.post('/specs', specControl.createSpec)
-app.patch('/specs/:id', specControl.updateSpec)
-app.delete('/specs/:id', specControl.deleteSpec)
+// //CRUD Routes - Specs
+// app.post('/specs', specControl.createSpec)
+// app.patch('/specs/:id', specControl.updateSpec)
+// app.delete('/specs/:id', specControl.deleteSpec)
 // //CRUD Routes - Works
 // app.post('/works', workControl.createWork)
 // app.patch('/works/:id', workControl.updateWork)

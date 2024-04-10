@@ -1,13 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-function Footer() {
+export default function Footer () {
   return (
     <div className="footer">
 
     </div>
-    );
+  )
 }
-
-export default Footer;
