@@ -57,9 +57,6 @@ export default function LogIn({toggleLogin}) {
                     </div>
                 </div>
             </form>
-            <div className="login-signup-container">
-                <div className="login-signup-link text-body-16">New to Codex? Sign up!</div>
-            </div>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import {Link} from 'react-router-dom'
 import {useContext, useState} from 'react'
 import UserAccount from './UserAccount'
 import LogIn from './LogIn'
+import AddUser from './AddUser'
 import userContext from '../../userContext'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faUser, faGear} from '@fortawesome/free-solid-svg-icons'
@@ -12,9 +13,11 @@ export default function UserSidebar ({toggleUserBar}) {
 
     const [userAccount, showAccount] = useState(false)
     const [userLogin, showLogin] = useState(true)
+    const [addUser, showAddUser] = useState(false)
 
     const toggleAccount = () => showAccount(!userAccount)
     const toggleLogin = () => showLogin(!userLogin)
+    const toggleAddUser = () => showAddUser(!addUser)
     
     return (
         <div className="userbar">
@@ -29,7 +32,12 @@ export default function UserSidebar ({toggleUserBar}) {
 
             <div className="userbar-account-container">
                 {loggedIn ? <UserAccount toggleAccount={toggleAccount}/> : null}
-                {!loggedIn ? <LogIn/> : null}
+                {!loggedIn ? <div className="login-container">
+                    <LogIn/>
+                    <div className="login-signup-link text-body-16" onClick={toggleAddUser}>New to Codex? Sign up!</div>
+                        {addUser ? <AddUser toggleAddUser={toggleAddUser}/> : null}
+                    </div>
+                    : null}
             </div>
 
         </div>
