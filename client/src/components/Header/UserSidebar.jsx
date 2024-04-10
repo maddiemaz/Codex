@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-import {useContext} from 'react'
+import {useContext, useState} from 'react'
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 // import {faUser} from '@fortawesome/free-solid-svg-icons'
 import UserAccount from './UserAccount'
@@ -10,7 +10,11 @@ export default function UserSidebar ({toggleUserBar}) {
     const {user} = useContext(userContext)
     const {loggedIn} = useContext(userContext)
 
+    const [userAccount, showAccount] = useState(false)
+    const [userLogin, showLogin] = useState(true)
+
     const toggleAccount = () => showAccount(!userAccount)
+    const toggleLogin = () => showLogin(!userLogin)
     
     return (
         <div className="userbar">

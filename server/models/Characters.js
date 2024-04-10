@@ -2,8 +2,8 @@ const {Schema} = require ('mongoose')
 
 const Characters = new Schema (
     {
-        owner: [{type: Schema.Types.ObjectId, ref: 'User'}],
-        world: [{type: Schema.Types.ObjectId, ref: 'World'}],
+        owner: [{type: Schema.Types.ObjectId, ref: 'Users'}],
+        world: [{type: Schema.Types.ObjectId, ref: 'Worlds'}],
         name: {type: String, required: true},
         aka: [{type: String, required: false}],
         designations: [{type: String, required: false}],
@@ -18,7 +18,7 @@ const Characters = new Schema (
         affiliations: [{type: String, required: false}],
         relevant_characters: [{type: String, required: false}],
         notes: [
-            {user_id: {type: Schema.Types.ObjectId, ref: 'User'}},
+            {user_id: {type: Schema.Types.ObjectId, ref: 'Users'}},
             {tags: [{type: String, required: false}]},
             {note_title: {type: String, required: true}},
             {note_contents: [{type: String, required: true}]}
@@ -40,12 +40,12 @@ const Characters = new Schema (
             {arcs: [{type: String, required: false}]},
             {affiliated: [{type: String, required: false}]},
             {relationships: [
-                {character_id: {type: Schema.Types.ObjectId, ref: 'Character'}},
+                {character_id: {type: Schema.Types.ObjectId, ref: 'Characters'}},
                 {relationship: {type: String, required: false}},
                 {priortiy: {type: String, required: false}}
             ]},
             {notes: [
-                {user_id: {type: Schema.Types.ObjectId, ref: 'User'}},
+                {user_id: {type: Schema.Types.ObjectId, ref: 'Users'}},
                 {tags: [{type: String, required: false}]},
                 {note_title: {type: String, required: true}},
                 {note_contents: [{type: String, required: true}]}

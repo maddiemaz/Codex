@@ -8,11 +8,11 @@ const Worlds = new Schema (
         about: {type: String, required: false},
         banner: {type: String, required: false},
         gallery: [{type: String, requied: false}],
-        owner: [{type: Schema.Types.ObjectId, ref: 'User'}],
-        editor: [{type: Schema.Types.ObjectId, ref: 'User'}],
+        owner: [{type: Schema.Types.ObjectId, ref: 'Users'}],
+        editor: [{type: Schema.Types.ObjectId, ref: 'Users'}],
         public: {type: Boolean, required: true},
         notes: [
-            {user_id: {type: Schema.Types.ObjectId, ref: 'User'}},
+            {user_id: {type: Schema.Types.ObjectId, ref: 'Users'}},
             {tags: [{type: String, required: false}]},
             {note_title: {type: String, required: true}},
             {note_contents: [{type: String, required: true}]}
@@ -24,11 +24,11 @@ const Worlds = new Schema (
             {canon: {type: Boolean, required: true}},
             {banner: {type: String, required: false}},
             {status: {type: String, required: true}},
-            {authors: [{type: Schema.Types.ObjectId, ref: 'User'}]},
+            {authors: [{type: Schema.Types.ObjectId, ref: 'Users'}]},
             {genres: [{type: String, required: false}]},
             {summary: {type: String, required: false}},
             {notes: [
-                {user_id: {type: Schema.Types.ObjectId, ref: 'User'}},
+                {user_id: {type: Schema.Types.ObjectId, ref: 'Users'}},
                 {tags: [{type: String, required: false}]},
                 {note_title: {type: String, required: true}},
                 {note_contents: [{type: String, required: true}]}

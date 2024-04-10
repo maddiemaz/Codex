@@ -30,6 +30,7 @@ app.get('/', (req, res) => {
 app.get('/users', userControl.getAllUsers)
 app.get('/users/id/:id', userControl.getUserbyId)
 app.get('/users/username/:username', userControl.getUserbyUsername)
+app.get('/users/email/:email', userControl.getUserbyEmail)
 app.post('/users', userControl.createUser)
 app.patch('/users/:id', userControl.editUser)
 app.delete('/users/:id', userControl.deleteUser)

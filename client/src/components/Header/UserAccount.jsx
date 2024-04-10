@@ -6,12 +6,13 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 export default function UserAccount ({toggleAccount}) {
     const {user} = useContext(userContext)
-    // const ownedWorlds = user[0].worlds_owned.length
+    
+    const ownedWorlds = user[0].worlds_owned.length
     // const ownedWorks = user[0].works_owned.length
-    // const ownedCharacters = user[0].characters_owned.length
+    const ownedCharacters = user[0].characters_owned.length
 
     return (
-        <div classname="sidebar-account-view">
+        <div className="sidebar-account-view">
             <div className="sidebar-account-primary-info">
                 <div className="sidebar-account-user-img-container">
                     {/* <FontAwesomeIcon className="sidebar-account-user-img-placeholder"/> */}

@@ -4,7 +4,7 @@ const {Worlds, Users} = require('../models')
 
 const getAllWorlds = async (req, res) => {
     try {
-        const worlds = await Worlds.find().populate({path: 'owner', populate: 'location'}).populate({path: 'works', populate: 'location'}).populate({path: 'tags', populate: 'location'}) // Array format may be wrong (probably "location")
+        const worlds = await Worlds.find().populate('owner').populate(['works']).populate(['tags'])
         // Also may need to format for Array: works.title/name (since those are objects)
         // May also want works.length (for number) and array for editors
         res.json(worlds)
@@ -16,7 +16,7 @@ const getAllWorlds = async (req, res) => {
 const getWorldbyId = async (req, res) => {
     try {
         const{id} = req.params
-        const world = await Worlds.findById(id).populate({path: 'owner', populate: 'location'}).populate({path: 'works', populate: 'location'}).populate({path: 'tags', populate: 'location'})
+        const world = await Worlds.findById(id).populate('owner').populate(['works']).populate(['tags'])
         if (world) {
             return res.json(world)
         }
@@ -29,8 +29,7 @@ const getWorldbyId = async (req, res) => {
 const getWorldsbyUser = async (req, res) => {
     try {
         const {user} = req.params
-        // Make sure it shoudl be "owner: user" and not an array format, or "user: user"
-        const worlds = await Worlds.find({owner: user}).populate({path: 'owner', populate: 'location'}).populate({path: 'works', populate: 'location'}).populate({path: 'tags', populate: 'location'})
+        const worlds = await Worlds.find({owner: user}).populate('owner').populate(['works']).populate(['tags'])
         if (worlds) {
             return res.json(worlds)
         } else {
@@ -86,12 +85,12 @@ const worldSearch = async (req, res) => {
         const regex = new RegExp(search, 'i')
         const owner = await Users.find({$or: [{worlds_owned: {$regex: regex}}]}) // may need to edit format for array
         // can add additonal axios searches here (in ^ format)
-        const worlds = await Worlds.find({name: {$regex}}).populate({path: 'owner', populate: 'location'}).populate({path: 'works', populate: 'location'}).populate({path: 'tags', populate: 'location'})
+        const worlds = await Worlds.find({name: {$regex}}).populate({path: 'owner'}).populate(['works']).populate(['tags'])
 
         let searchOwner = []
 
         if (owner.length > 0) {
-            searchOwner = await Worlds.find({owner: owner[0]._id}).populate({path: 'owner', populate: 'location'}).populate({path: 'works', populate: 'location'}).populate({path: 'tags', populate: 'location'})
+            searchOwner = await Worlds.find({owner: owner[0]._id}).populate('owner').populate(['works']).populate(['tags'])
         }
 
         let combinedArray = []

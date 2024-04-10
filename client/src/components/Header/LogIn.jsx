@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 import userContext from '../../userContext'
 import axios from 'axios'
 
-export default function LogIn() {
+export default function LogIn({toggleLogin}) {
     const {setLoggedIn} = useContext(userContext)
     const {setUser} = useContext(userContext)
     const [errorMessage, setErrorMessage] = useState()
@@ -46,7 +46,7 @@ export default function LogIn() {
                         <input className="login-input-field" type='password' id='password' placeholder='password' value={formState.password} onChange={handleChange} required/>
                     </div>
                     <div className="login-button-container">
-                        <button type='submit' className="login-button-submit">log in</button>
+                        <button type='submit' className="login-button-submit" onClick={toggleLogin}>log in</button>
                     </div>
                     <div className="login-error">
                         {errorMessage !== '' ? errorMessage : null}

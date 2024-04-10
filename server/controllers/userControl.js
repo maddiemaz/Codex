@@ -2,7 +2,7 @@ const {Users} = require('../models')
 
 const getAllUsers = async (req, res) => {
     try {
-        const users = await Users.find({}).populate({path: 'worlds_owned', populate: 'location'}).populate({path: 'characters_owned', populate: {path: 'location'}})
+        const users = await Users.find({}).populate(['worlds_owned']).populate(['characters_owned'])
         res.json(users)
     } catch (e) {
         return res.status(500).send(e.message)
@@ -12,7 +12,7 @@ const getAllUsers = async (req, res) => {
 const getUserbyId = async (req, res) => {
     try {
         const{id} = req.params
-        const user = await Users.findById(id).populate({path: 'worlds_owned', populate: 'location'}).populate({path: 'characters_owned', populate: {path: 'location'}})
+        const user = await Users.findById(id).populate(['worlds_owned']).populate(['characters_owned'])
         if (user) {
             return res.json(user)
         } else {
@@ -26,11 +26,25 @@ const getUserbyId = async (req, res) => {
 const getUserbyUsername = async (req, res) => {
     try {
         const{username} = req.params
-        const user = await Users.find({username: username}).populate({path: 'worlds_owned', populate: 'location'}).populate({path: 'characters_owned', populate: {path: 'location'}})
+        const user = await Users.find({username: username}).populate(['worlds_owned']).populate(['characters_owned'])
         if (user) {
             return res.json(user)
         } else {
             return res.status(404).send('Username not found')
+        }
+    } catch (e) {
+        return res.status(500).send(e.message)
+    }
+}
+
+const getUserbyEmail = async (req, res) => {
+    try {
+        const{email} = req.params
+        const user = await Users.find({email: email}).populate(['worlds_owned']).populate(['characters_owned'])
+        if (user) {
+            return res.json(user)
+        } else {
+            return res.status(404).send('Email not found')
         }
     } catch (e) {
         return res.status(500).send(e.message)
@@ -79,6 +93,7 @@ module.exports = {
     getAllUsers,
     getUserbyId,
     getUserbyUsername,
+    getUserbyEmail,
     createUser,
     deleteUser,
     editUser
