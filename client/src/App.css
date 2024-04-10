@@ -294,6 +294,9 @@ body {
 
   margin: 20px 30px 0px 30px;
 }
+.userbar-button-settings {
+  color: white;
+}
 .userbar-account-container {
   margin-top: 15vh;
 }
