@@ -7,7 +7,7 @@ const getAllWorlds = async (req, res) => {
         const worlds = await Worlds.find().populate({path: 'owner', populate: 'location'}).populate({path: 'works', populate: 'location'}).populate({path: 'tags', populate: 'location'}) // Array format may be wrong (probably "location")
         // Also may need to format for Array: works.title/name (since those are objects)
         // May also want works.length (for number) and array for editors
-        res.json(venues)
+        res.json(worlds)
     } catch (e) {
         return res.status(500).send(e.message)
     }

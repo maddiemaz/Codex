@@ -34,8 +34,8 @@ app.post('/users', userControl.createUser)
 app.patch('/users/:id', userControl.editUser)
 app.delete('/users/:id', userControl.deleteUser)
 
-// Universal Search - Character
-app.get('/search/:search', charControl.universalSearch)
+// // Universal Search - Character
+// app.get('/search/:search', charControl.universalSearch)
 
 // Find All Routes - All
 app.get('/worlds', worldControl.getAllWorlds)
