@@ -41,6 +41,10 @@ export default function LogIn({toggleLogin}) {
         <div className="login-form">
             <form className="login-form-form" onSubmit={handleLogIn}>
                 <div className="login-form-container">
+                    <div className="login-form-title">
+                        <div className="text-body-24">welcome to</div>
+                        <div className="text-title-28">codex</div>
+                    </div>
                     <div className="login-form-fields">
                         <input className="login-input-field" type='text' id='email' placeholder='email' value={formState.email} onChange={handleChange} required/>
                         <input className="login-input-field" type='password' id='password' placeholder='password' value={formState.password} onChange={handleChange} required/>
@@ -53,6 +57,9 @@ export default function LogIn({toggleLogin}) {
                     </div>
                 </div>
             </form>
+            <div className="login-signup-container">
+                <div className="login-signup-link text-body-16">New to Codex? Sign up!</div>
+            </div>
         </div>
     )
 }

@@ -162,6 +162,8 @@ body {
   width: 75%;
   display: flex;
   flex-direction: column;
+  
+
 }
 .navbar-header{
   display: flex;
@@ -169,9 +171,34 @@ body {
   justify-content: space-between;
   align-items: top;
 
+  font-size: 30px;
+
   margin: 20px 20px 20px 30px;
 }
+.navbar-header-placeholder {
+  opacity: 0;
+}
+.navbar-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
+  text-align: left;
+
+}
+.navbar-links-owned, .navbar-links-all {
+  margin-top: 10%;
+}
+.navbar-links-all-links, .navbar-links-owned-links {
+  margin-left: 10%;
+}
+.text-links-navbar-all, .text-links-navbar-owned {
+  text-decoration: none;
+  color: white;
+
+  margin-top: 5px;
+}
 
 /* User Sidebar */
 .userbar {
@@ -198,16 +225,32 @@ flex-direction: row;
 justify-content: space-between;
 align-items: top;
 
+font-size: 30px;
+
 margin: 20px 20px 20px 30px;
 }
 .userbar-account-container {
-  margin-top: 25vh;
+  margin-top: 15vh;
 }
 .login-form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-form-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 25px;
 }
 .login-form-fields {
   display: flex;
@@ -223,4 +266,8 @@ margin: 20px 20px 20px 30px;
 }
 .login-error {
 
+}
+.login-signup-link {
+  margin-top: 25px;
+  color: black;
 }
