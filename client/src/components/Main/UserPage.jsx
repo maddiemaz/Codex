@@ -16,7 +16,7 @@ export default function UserPage () {
 
     const navigate = useNavigate()
     
-    if (!UserPage) {
+    if (!user) {
         return <div className="loading">Loading...</div>
     } else {
         return (
@@ -31,9 +31,9 @@ export default function UserPage () {
                             {/* <div className="text-body-14">{character.world[0].name}</div>
                             <div className="text-body-12">{character.owner[0].username}</div> */}
                             <div className="char-des-bubble-container">
-                                {user.tags.map((tag, index) => {
+                                {/* {user.tags.map((tag, index) => {
                                     return <div className="char-des-bubble" key={index}>{tag}</div>
-                                })}
+                                })} */}
                             </div>
                         </div>
                     </div>

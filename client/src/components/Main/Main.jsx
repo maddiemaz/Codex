@@ -18,7 +18,7 @@ export default function Main () {
                 <Route path='/search/results' element={<SearchResults/>}/>
                 <Route path='/account/:id' element={<AccountPage/>}/>
                 <Route path='/users' element={<UserList/>}/>
-                <Route path='/user/:id' element={<UserPage/>}/>
+                <Route path='/users/:id' element={<UserPage/>}/>
                 <Route path='/worlds' element={<WorldList/>}/>
                 <Route path='/worlds/:id' element={<WorldPage/>}/>
                 <Route path='/characters' element={<CharacterList/>}/>

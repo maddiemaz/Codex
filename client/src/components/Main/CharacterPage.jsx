@@ -31,9 +31,9 @@ export default function CharacterPage () {
                             {/* <div className="text-body-14">{character.world[0].name}</div>
                             <div className="text-body-12">{character.owner[0].username}</div> */}
                             <div className="char-des-bubble-container">
-                                {character.designations.map((designation, index) => {
+                                {/* {character.designations.map((designation, index) => {
                                     return <div className="char-des-bubble" key={index}>{designation}</div>
-                                })}
+                                })} */}
                             </div>
                         </div>
                     </div>
