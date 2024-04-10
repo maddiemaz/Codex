@@ -7,7 +7,7 @@ export default function Characters () {
 
     useEffect(() => {
         const getCharacters = async() => {
-            const response = await axios.get('http://localhost:3001/worlds')
+            const response = await axios.get('http://localhost:3001/characters')
             setCharacters(response.data)
         }
         getCharacters()
@@ -15,7 +15,7 @@ export default function Characters () {
 
     const navigate = useNavigate()
 
-    const showType = (character) => {
+    const showCharacter = (character) => {
         navigate(`${character._id}`)
     }
     
@@ -26,8 +26,8 @@ export default function Characters () {
             <div className='character-list-page'>
                 <div className='search-list-title'>Characters</div>
                 <div className="search-list-grid">
-                    {characters.map((character) => (
-                        <div className="search-list-card" onClick={() => showType(character)} key={character._id}>
+                    {characters.map((character, id) => (
+                        <div className="search-list-card" onClick={() => showCharacter(character)} key={character._id}>
                             <div className="list-card-image-container">
                                 <img src={character.banner} alt={character.name} className="list-card-image"/>
                             </div>

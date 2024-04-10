@@ -1,6 +1,6 @@
 import {Routes, Route} from 'react-router-dom'
 import Home from './Home'
-import Account from './Account'
+import AccountPage from './AccountPage'
 import SearchResults from './SearchResults'
 import UserList from './UserList'
 import UserPage from './UserPage'
@@ -16,7 +16,7 @@ export default function Main () {
             <Routes>
                 <Route path='/' element={<Home/>}/>
                 <Route path='/search/results' element={<SearchResults/>}/>
-                <Route path='/account/:id' element={<Account/>}/>
+                <Route path='/account/:id' element={<AccountPage/>}/>
                 <Route path='/users' element={<UserList/>}/>
                 <Route path='/user/:id' element={<UserPage/>}/>
                 <Route path='/worlds' element={<WorldList/>}/>

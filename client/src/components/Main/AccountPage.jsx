@@ -8,7 +8,7 @@ export default function Account () {
 
     return (
         <div className="account-page">
-            
+            <div>Account Page</div>
         </div>
     )
 }
