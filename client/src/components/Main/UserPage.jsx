@@ -28,10 +28,12 @@ export default function UserPage () {
                         </div>
                         <div className="list-card-info">
                             <div className="text-title-20">{user.username}</div>
+                            {/* <div className="text-body-14">{character.world[0].name}</div>
+                            <div className="text-body-12">{character.owner[0].username}</div> */}
                             <div className="user-tag-bubble-container">
-                                {/* {user.tags.map((tag, index) => {
+                                {user.tags.map((tag, index) => {
                                     return <div className="user-tag-bubble" key={index}>{tag}</div>
-                                })} */}
+                                })}
                             </div>
                         </div>
                     </div>
