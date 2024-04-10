@@ -19,10 +19,10 @@ export default function UserSidebar ({toggleUserBar}) {
     return (
         <div className="userbar">
             <div className="userbar-header">
-                <div className="navbar-button-close" onClick={toggleUserBar}>&times;</div>
-                <FontAwesomeIcon icon={faGear} className="navbar-header-placeholder">
-                    {loggedIn ? <Link to={`/account/${user[0]._id}`} onClick={toggleUserBar}/> : null}
-                </FontAwesomeIcon>
+                <div className="userbar-button-close" onClick={toggleUserBar}>&times;</div>
+                <div className="userbar-button-settings-container">
+                    {loggedIn ? <FontAwesomeIcon icon={faGear} className="userbar-button-settings" toggleAccount={toggleAccount}/> : null}
+                </div>
             </div>
 
             <div className="userbar-account-container">

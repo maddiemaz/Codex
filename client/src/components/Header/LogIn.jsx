@@ -42,8 +42,8 @@ export default function LogIn({toggleLogin}) {
             <form className="login-form-form" onSubmit={handleLogIn}>
                 <div className="login-form-container">
                     <div className="login-form-title">
-                        <div className="text-body-24">welcome to</div>
-                        <div className="text-title-28">codex</div>
+                        <div className="text-body-30 login-form-title-body">welcome to</div>
+                        <div className="text-title-36">codex</div>
                     </div>
                     <div className="login-form-fields">
                         <input className="login-input-field" type='text' id='email' placeholder='email' value={formState.email} onChange={handleChange} required/>

@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import {Link} from 'react-router-dom'
 import NavSidebar from './NavSidebar'
 import UserSidebar from './UserSidebar'
 // import userContext from '../../userContext'
@@ -21,8 +22,10 @@ export default function Header() {
             <div className="header-primary">
                 <FontAwesomeIcon icon={faBars} className="navbar-button" onClick={toggleNavBar}/>
                     {navBar ? <NavSidebar toggleNavBar={toggleNavBar}/> : null}
-                <div className="header-app-logo">codex</div>
+                <Link to="/" className="header-app-logo text-title-30">codex</Link>
                 <div className="userbar-button" onClick={toggleUserBar}>
+                    {/* Switch to user.banner if logged in */}
+                    <img className="userbar-img-placeholder"/>
                     <FontAwesomeIcon icon={faUser} className="userbar-icon-placeholder"/>
                 </div>
                     {userBar ? <UserSidebar toggleUserBar={toggleUserBar}/> : null}

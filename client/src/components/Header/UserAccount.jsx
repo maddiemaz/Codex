@@ -19,16 +19,16 @@ export default function UserAccount ({toggleAccount}) {
                     <img src={user[0].banner} className="sidebar-account-user-img"/>
                     {/* Ideally add in an alt image as a basic user icon (not sure if FontAwesome will work as a backup image, so import svg) */}
                 </div>
-                <div className="sidebar-account-username">{user[0].username}</div>
+                <div className="align-center text-body-32">{user[0].username}</div>
             </div>
             <div className="sidebar-account-stats">
                 <div className="sidebar-owned-stat-set">
-                    <div className="sidebar-owned-stat-number">{ownedWorlds}</div>
-                    <div className="sidebar-owned-stat-subtitle">Worlds</div>
+                    <div className="sidebar-owned-stat-number text-title-30">{ownedWorlds}</div>
+                    <div className="sidebar-owned-stat-subtitle text-body-20">Worlds</div>
                 </div>
                 <div className="sidebar-owned-stat-set">
-                    <div className="sidebar-owned-stat-number">{ownedCharacters}</div>
-                    <div className="sidebar-owned-stat-subtitle">Characters</div>
+                    <div className="sidebar-owned-stat-number text-title-30">{ownedCharacters}</div>
+                    <div className="sidebar-owned-stat-subtitle text-body-20">Characters</div>
                 </div>
             </div>
         </div>

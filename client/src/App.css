@@ -13,6 +13,26 @@ body {
 }
 
 /* Fonts - CSS */
+.text-title-42 {
+  font-family: "Bungee";
+  font-size: 42px;
+}
+.text-title-40 {
+  font-family: "Bungee";
+  font-size: 40px;
+}
+.text-title-38 {
+  font-family: "Bungee";
+  font-size: 38px;
+}
+.text-title-36 {
+  font-family: "Bungee";
+  font-size: 36px;
+}
+.text-title-34 {
+  font-family: "Bungee";
+  font-size: 34px;
+}
 .text-title-32 {
   font-family: "Bungee";
   font-size: 32px;
@@ -64,6 +84,26 @@ body {
 .text-title-8 {
   font-family: "Bungee";
   font-size: 8px;
+}
+.text-body-32 {
+  font-family: "Abel";
+  font-size: 32px;
+}
+.text-body-30 {
+  font-family: "Abel";
+  font-size: 30px;
+}
+.text-body-28 {
+  font-family: "Abel";
+  font-size: 28px;
+}
+.text-body-26 {
+  font-family: "Abel";
+  font-size: 26px;
+}
+.text-body-24 {
+  font-family: "Abel";
+  font-size: 24px;
 }
 .text-body-22 {
   font-family: "Abel";
@@ -131,12 +171,40 @@ body {
 	justify-content: space-between;
 	align-items: center;
 
+  font-size: 30px;
+
 	margin: 20px 30px 20px 20px;
 }
-.header-app-title {
-	color: white;
+.header-app-logo {
 	text-decoration: none;
+  color: #201f1f;
 }
+.userbar-button {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+  text-align: center;
+}
+.userbar-img-placeholder {
+  background-color: #201f1f;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  z-index: 150;
+  position: fixed;
+  right: 21px;
+}
+.userbar-icon-placeholder {
+  z-index: 160;
+  position: fixed;
+  color: white;
+}
+
 .header-search {
 	display: flex;
 	justify-content: center;
@@ -159,7 +227,7 @@ body {
 
   color: white;
 
-  width: 75%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   
@@ -209,25 +277,22 @@ body {
   overflow-x: hidden;
   z-index: 900;
   background: linear-gradient(135deg, #44d5eb, #44ebab, #44eb87, #44eb52);
-  /* background-size: cover;
-  background-repeat: no-repeat; */
-  /* background-position: 0%; */
 
   color: white;
 
-  width: 75%;
+  width: 80%;
   display: flex;
   flex-direction: column;
 }
 .userbar-header {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: top;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: top;
 
-font-size: 30px;
+  font-size: 30px;
 
-margin: 20px 20px 20px 30px;
+  margin: 20px 30px 0px 30px;
 }
 .userbar-account-container {
   margin-top: 15vh;
@@ -252,6 +317,10 @@ margin: 20px 20px 20px 30px;
 
   margin-bottom: 25px;
 }
+.login-form-title-body {
+  font-weight: bold;
+  margin-bottom: -15px;
+}
 .login-form-fields {
   display: flex;
   flex-direction: column;
@@ -260,6 +329,9 @@ margin: 20px 20px 20px 30px;
 }
 .login-input-field {
   margin-bottom: 10px;
+  width: 200px;
+  font-family: "Abel";
+  font-size: 16px;
 }
 .login-button-container {
   margin-top: 5px;
@@ -267,7 +339,50 @@ margin: 20px 20px 20px 30px;
 .login-error {
 
 }
+.login-button-submit {
+  font-size: 18px;
+}
 .login-signup-link {
   margin-top: 25px;
   color: black;
+}
+.sidebar-account-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar-account-user-img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  margin-top: -80px;
+  margin-bottom: 10px;
+}
+.sidebar-account-user-img {
+  
+}
+.sidebar-account-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: top;
+  align-items: center;
+}
+.sidebar-owned-stat-set {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+
+  margin: 0px 10px 0px 10px;
+}
+.sidebar-owned-stat-number {
+  margin-top: 10px;
+  margin-bottom: -8px;
 }
