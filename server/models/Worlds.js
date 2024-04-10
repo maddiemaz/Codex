@@ -1,6 +1,6 @@
 const {Schema} = require ('mongoose')
 
-const World = new Schema (
+const Worlds = new Schema (
     {
         name: {type: String, required: true},
         tags: [{type: String, required: false}],
@@ -8,8 +8,8 @@ const World = new Schema (
         about: {type: String, required: false},
         banner: {type: String, required: false},
         gallery: [{type: String, requied: false}],
-        owners: [{type: Schema.Types.ObjectId, ref: 'User'}],
-        editors: [{type: Schema.Types.ObjectId, ref: 'User'}],
+        owner: [{type: Schema.Types.ObjectId, ref: 'User'}],
+        editor: [{type: Schema.Types.ObjectId, ref: 'User'}],
         public: {type: Boolean, required: true},
         notes: [
             {user_id: {type: Schema.Types.ObjectId, ref: 'User'}},
@@ -36,3 +36,4 @@ const World = new Schema (
         ]
     }
 )
+module.exports = Worlds

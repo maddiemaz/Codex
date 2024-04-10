@@ -1,14 +1,14 @@
 const mongoose = require('mongoose')
-const userSchema = require('./User')
-const worldSchema = require('./World')
-const characterSchema = require('./Character')
+const userSchema = require('./Users')
+const worldSchema = require('./Worlds')
+const characterSchema = require('./Characters')
 
-const User = mongoose.model('User', userSchema)
-const World = mongoose.model('World', worldSchema)
-const Character = mongoose.model('Character', characterSchema)
+const Users = mongoose.model('Users', userSchema)
+const Worlds = mongoose.model('Worlds', worldSchema)
+const Characters = mongoose.model('Characters', characterSchema)
 
 module.exports = {
-    User,
-    World,
-    Character
+    Users,
+    Worlds,
+    Characters
 }
