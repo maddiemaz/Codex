@@ -10,21 +10,21 @@ export default function NavSidebar({toggleNavBar}) {
             </div>
             <div className="navbar-links">
                 <div className="navbar-links-owned">
-                    <div className="text-title-18">Search your codex</div>
+                    <div className="text-title-18">Your Codex</div>
                     <div className="navbar-links-owned-links"> 
-                    {/* Add Links */}
+                    {/* Add Links; Toggle Off if not logged in */}
                         <div className="text-title-14 text-links-navbar-owned" onClick={toggleNavBar}>Your Worlds</div>
                         <div className="text-title-14 text-links-navbar-owned" onClick={toggleNavBar}>Your Works</div>
                         <div className="text-title-14 text-links-navbar-owned" onClick={toggleNavBar}>Your Characters</div>
                     </div>
                 </div>
                 <div className="navbar-links-all">
-                    <div className="text-title-18">Search all codices</div>
+                    <div className="text-title-18">All Codices</div>
                     <div className="navbar-links-all-links"> 
-                    {/* Add Routes */}
-                        {/* <Link to="/worlds" className="text-title-14 text-links-navbar-all" onClick={toggleNavBar}>All Worlds</Link>
-                        <Link to="/works" className="text-title-14 text-links-navbar-all" onClick={toggleNavBar}>All Works</Link>
-                        <Link to="/characters" className="text-title-14 text-links-navbar-all" onClick={toggleNavBar}>All Characters</Link> */}
+                        <Link to="/worlds" className="text-title-14 text-links-navbar-all" onClick={toggleNavBar}>All Worlds</Link>
+                        {/* <Link to="/works" className="text-title-14 text-links-navbar-all" onClick={toggleNavBar}>All Works</Link> */}
+                        <div className="text-title-14 text-links-navbar-all">All Works</div>
+                        <Link to="/characters" className="text-title-14 text-links-navbar-all" onClick={toggleNavBar}>All Characters</Link>
                     </div>
                 </div>
             </div>

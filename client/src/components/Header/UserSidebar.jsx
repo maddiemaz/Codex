@@ -25,7 +25,7 @@ export default function UserSidebar ({toggleUserBar}) {
                 </FontAwesomeIcon>
             </div>
 
-            <div className="userbar-login">
+            <div className="userbar-account-container">
                 {loggedIn ? <UserAccount toggleAccount={toggleAccount}/> : null}
                 {!loggedIn ? <LogIn/> : null}
             </div>

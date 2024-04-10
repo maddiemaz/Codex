@@ -41,13 +41,29 @@ body {
   font-family: "Bungee";
   font-size: 20px;
 }
-.text-title-18{
+.text-title-18 {
   font-family: "Bungee";
   font-size: 18px;
 }
 .text-title-16 {
   font-family: "Bungee";
   font-size: 16px;
+}
+.text-title-14 {
+  font-family: "Bungee";
+  font-size: 14px;
+}
+.text-title-12 {
+  font-family: "Bungee";
+  font-size: 12px;
+}
+.text-title-10 {
+  font-family: "Bungee";
+  font-size: 10px;
+}
+.text-title-8 {
+  font-family: "Bungee";
+  font-size: 8px;
 }
 .text-body-22 {
   font-family: "Abel";
@@ -57,7 +73,7 @@ body {
   font-family: "Abel";
   font-size: 20px;
 }
-.text-body-18{
+.text-body-18 {
   font-family: "Abel";
   font-size: 18px;
 }
@@ -65,19 +81,19 @@ body {
   font-family: "Abel";
   font-size: 16px;
 }
-.text-title-14 {
+.text-body-14 {
   font-family: "Abel";
   font-size: 14px;
 }
-.text-title-12 {
+.text-body-12 {
   font-family: "Abel";
   font-size: 12px;
 }
-.text-title-10 {
+.text-body-10 {
   font-family: "Abel";
   font-size: 10px;
 }
-.text-title-8 {
+.text-body-8 {
   font-family: "Abel";
   font-size: 8px;
 }
@@ -129,53 +145,82 @@ body {
 }
 
 /* Nav Sidebar */
-.sidenav {
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   overflow-x: hidden;
   z-index: 1000;
-  /* background-image: linear-gradient(135deg, #060606, #141414, #3a3a3a, #b8b8b8); */
+  background-image: linear-gradient(135deg, #4471eb, #449aeb, #44d5eb, #44ebab);
   /* background-size: cover;
   background-repeat: no-repeat; */
   /* background-position: 0%; */
+
+  color: white;
 
   width: 75%;
   display: flex;
   flex-direction: column;
 }
-.sidenav-header {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: top;
+.navbar-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: top;
 
-margin: 20px 20px 20px 30px;
+  margin: 20px 20px 20px 30px;
 }
 
+
 /* User Sidebar */
-.sidenav {
+.userbar {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   bottom: 0;
   overflow-x: hidden;
   z-index: 900;
-  /* background: linear-gradient(135deg, #060606, #141414, #3a3a3a, #b8b8b8); */
+  background: linear-gradient(135deg, #44d5eb, #44ebab, #44eb87, #44eb52);
   /* background-size: cover;
   background-repeat: no-repeat; */
   /* background-position: 0%; */
+
+  color: white;
 
   width: 75%;
   display: flex;
   flex-direction: column;
 }
-.sidenav-header {
+.userbar-header {
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: top;
 
 margin: 20px 20px 20px 30px;
+}
+.userbar-account-container {
+  margin-top: 25vh;
+}
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-form-fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-input-field {
+  margin-bottom: 10px;
+}
+.login-button-container {
+  margin-top: 5px;
+}
+.login-error {
+
 }
