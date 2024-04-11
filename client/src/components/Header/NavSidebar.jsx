@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom'
 import {useContext, useState} from 'react'
 import userContext from '../../userContext'
+import SearchBar from './SearchBar'
 
 export default function NavSidebar({toggleNavBar}) {
     const {user} = useContext(userContext)
@@ -15,6 +16,9 @@ export default function NavSidebar({toggleNavBar}) {
                 <div className="navbar-header-placeholder">0</div>
                 <div className="navbar-header-title">codex</div>
                 <div className="navbar-button-close" onClick={toggleNavBar}>&times;</div>
+            </div>
+            <div className="header-search">
+                <SearchBar/>
             </div>
             <div className="navbar-links">
                 {loggedIn ? 

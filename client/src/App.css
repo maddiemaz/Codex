@@ -265,7 +265,7 @@ body {
   text-align: left;
   /* width: 300px; */
 
-  margin-top: -20px;
+  margin-top: -30px;
 }
 .navbar-links-owned, .navbar-links-all {
   width: 200px;
@@ -285,6 +285,15 @@ body {
   color: white;
 
   margin-top: 10px;
+}
+.searchbar {
+  margin-top: -20px;
+}
+/* .searchbar-form {
+  font-family: "Abel";
+} */
+.searchbar-icon {
+  font-size: 26px;
 }
 
 /* User Sidebar */
@@ -351,11 +360,13 @@ body {
   justify-content: center;
   align-items: center;
 }
-.login-input-field, .form-input-field-add-user {
+.login-input-field, .form-input-field-add-user, .searchbar-input {
   margin-bottom: 10px;
   width: 200px;
   font-family: "Abel";
   font-size: 16px;
+
+  /* border: none; */
 }
 .login-button-container {
   margin-top: 5px;
