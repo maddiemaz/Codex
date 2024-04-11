@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import NavSidebar from './NavSidebar'
 import UserSidebar from './UserSidebar'
 // import userContext from '../../userContext'
-import SearchBar from './SearchBar'
+// import SearchBar from './SearchBar'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars, faUser} from '@fortawesome/free-solid-svg-icons'
 
@@ -31,9 +31,9 @@ export default function Header() {
                     {userBar ? <UserSidebar toggleUserBar={toggleUserBar}/> : null}
             </div>
 
-            <div className="header-search">
+            {/* <div className="header-search">
                 <SearchBar/>
-            </div>
+            </div> */}
         </div>
     )
 }

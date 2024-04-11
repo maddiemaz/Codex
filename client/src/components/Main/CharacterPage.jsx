@@ -109,7 +109,7 @@ export default function CharacterPage () {
                                 {aboutInfo ?
                                 <div className="detail-card-secondary-info text-body-16">
                                     <div className="detail-card-secondary-info-set-column">
-                                        <div className="text-body-16">{character.works[0].bio}</div>
+                                        {/* <div className="text-body-16">{character.works[0].bio}</div> */}
                                     </div>                           
                                 </div>
                                 : null}
@@ -198,7 +198,7 @@ export default function CharacterPage () {
                     <div className="detail-card-secondary">
                             <div className="detail-card-secondary-info-container">
                                 <div className="detail-card-toggle-header">
-                                    <div className="text-title-22">{character.works[0].title}</div>
+                                    {/* <div className="text-title-22">{character.works[0].title}</div> */}
                                     <div className="detail-card-toggle-icon-set">
                                         <FontAwesomeIcon icon={faPenToSquare} className="toggle-set-icon offset-left-20"/>
                                         <FontAwesomeIcon icon={faChevronDown} onClick={toggleWorksInfo} className="toggle-set-icon offset-left-20"/>

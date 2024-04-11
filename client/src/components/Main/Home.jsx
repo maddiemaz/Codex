@@ -7,7 +7,7 @@ export default function Home () {
                     <div className="placeholder-graphic">codex</div>
                 </div>
                 <div className="welcome-text-container">
-                    <div className="text-body-18">Welcome to Codex, the ultimate index for organizing your creative projects!</div>
+                    <div className="text-body-20">Welcome to <span className="emphasis-1">Codex</span>, the <span className="emphasis-2">ultimate index</span> for organizing your <span className="emphasis-2">creative projects!</span></div>
                 </div>
             </div>
         </div>

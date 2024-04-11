@@ -454,6 +454,49 @@ body {
   margin-bottom: 20px;
 }
 
+/* Home Page */
+.home-page {
+  margin-top: 4rem;
+}
+.home-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-graphic-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #447eeb, #44d5eb, #44ebab, #44eb87);
+
+  margin-bottom: 40px;
+}
+.placeholder-graphic {
+  font-size: 50px;
+  font-family: "Bungee";
+  color: white;
+}
+.welcome-text-container {
+  max-width: 200px;
+  text-align: center;
+}
+.emphasis-1 {
+  /* font-family: "Bungee"; */
+
+  color: #4471eb;
+}
+.emphasis-2 {
+  /* font-family: "Bungee"; */
+
+  color: #449aeb
+}
 
 /* List Pages */
 .world-list-page, .user-list-page, .character-list-page {
