@@ -1,8 +1,14 @@
 import {useNavigate} from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import AddWorld from './subcomponents/AddWorld'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faChevronDown, faChevronUp, faCaretDown, faCaretUp, faCirclePlus, faPenToSquare} from '@fortawesome/free-solid-svg-icons'
 
 export default function World () {
+    const [addNew, showAddNew] = useState(false)
+    const toggleAddNew = () => showAddNew(!addNew)
+
     const [worlds, setWorlds] = useState([])
 
     useEffect(() => {
@@ -65,6 +71,14 @@ export default function World () {
                             </div>
                         </div>
                     ))}
+
+                    <div className="list-card-add">
+                        <div className="card-add-header">
+                            <div className="text-title-20">Add World</div>
+                            <FontAwesomeIcon icon={faCirclePlus} className="card-add-icon" onClick={toggleAddNew}/>
+                        </div>
+                        {addNew ? <AddWorld toggleAddNew={toggleAddNew}/> : null}
+                    </div>
                 </div>
             </div>
         ) 

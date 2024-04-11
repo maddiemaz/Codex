@@ -1,8 +1,14 @@
 import {useNavigate} from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import AddCharacter from './subcomponents/AddCharacter'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCirclePlus, faCircleXmark} from '@fortawesome/free-solid-svg-icons'
 
 export default function Characters () {
+    const [addNew, showAddNew] = useState(false)
+    const toggleAddNew = () => showAddNew(!addNew)
+
     const [characters, setCharacters] = useState([])
 
     useEffect(() => {
@@ -44,6 +50,14 @@ export default function Characters () {
                             </div>
                         </div>
                     ))}
+
+                    <div className="list-card-add">
+                        <div className="card-add-header">
+                            <div className="text-title-20">Add Character</div>
+                            <FontAwesomeIcon icon={faCirclePlus} className="card-add-icon" onClick={toggleAddNew}/>
+                        </div>
+                        {addNew ? <AddCharacter toggleAddNew={toggleAddNew}/> : null}
+                    </div>
                 </div>
             </div>
         ) 

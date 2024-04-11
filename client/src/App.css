@@ -243,6 +243,7 @@ body {
   justify-content: space-between;
   align-items: top;
 
+  font-family: "Bungee";
   font-size: 30px;
 
   margin: 20px 20px 20px 30px;
@@ -540,6 +541,75 @@ body {
   margin-right: 5px;
 }
 
+.list-card-add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: top;
+  overflow: hidden;
+
+  margin-top: 5px;
+  margin-bottom: 20px;
+  background-color: #449aeb;
+  color: white;
+  box-shadow: 4px 4px 10px 4px rgb(0 0 0 /8%);
+
+  width: 350px;
+
+  padding: 15px;
+}
+.card-add-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-add-icon {
+  font-size: 26px;
+}
+.form-add-new {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-add-fields-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-select {
+  margin-bottom: 10px;
+  width: 200px;
+  font-family: "Abel";
+  font-size: 16px;
+  border: none;
+}
+.form-select-option {
+  font-size: 16px;
+}
+.radio-button-container {
+  margin-bottom: 5px;
+}
+.add-form-input {
+  margin-bottom: 10px;
+  width: 200px;
+  font-family: "Abel";
+  font-size: 16px;
+  border: none;
+}
+.add-new-submit-button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.login-input-field, .form-input-field-add-user {
+  margin-bottom: 10px;
+  width: 200px;
+  font-family: "Abel";
+  font-size: 16px;
+}
+
 
 /* Detail Pages */
 .world-detail-page, .user-detail-page, .character-detail-page {
@@ -688,4 +758,46 @@ body {
 }
 .offset-top-5 {
   margin-top: 5px;
+}
+
+
+@media (min-width: 600px) {
+  /* body {
+    background: green;
+  } */
+  .userbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    z-index: 900;
+    background: linear-gradient(135deg, #44d5eb, #44ebab, #44eb87, #44eb52);
+  
+    color: white;
+  
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    z-index: 1000;
+    background-image: linear-gradient(135deg, #4471eb, #449aeb, #44d5eb, #44ebab);
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+    /* background-position: 0%; */
+  
+    color: white;
+  
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    
+  
+  }
 }

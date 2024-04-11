@@ -1,6 +1,8 @@
 import {useNavigate} from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faChevronDown, faChevronUp, faCaretDown, faCaretUp, faCirclePlus, faPenToSquare} from '@fortawesome/free-solid-svg-icons'
 
 export default function UserList () {
     const [users, setUsers] = useState([])
