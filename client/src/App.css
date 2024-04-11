@@ -766,38 +766,21 @@ body {
     background: green;
   } */
   .userbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    overflow-x: hidden;
-    z-index: 900;
     background: linear-gradient(135deg, #44d5eb, #44ebab, #44eb87, #44eb52);
   
     color: white;
   
-    width: 80%;
-    display: flex;
-    flex-direction: column;
+    width: 30%;
+    min-width: 250px;
+    max-width: 80%;
   }
   .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    overflow-x: hidden;
-    z-index: 1000;
     background-image: linear-gradient(135deg, #4471eb, #449aeb, #44d5eb, #44ebab);
-    /* background-size: cover;
-    background-repeat: no-repeat; */
-    /* background-position: 0%; */
   
     color: white;
   
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    
-  
+    width: 30%;
+    min-width: 250px;
+    max-width: 80%;  
   }
 }
