@@ -24,7 +24,11 @@ export default function NavSidebar({toggleNavBar}) {
                     {/* Add Links */}
                         <div className="text-body-20 text-links-navbar-owned" onClick={toggleNavBar}>Worlds</div>
                         <div className="text-body-20 text-links-navbar-owned" onClick={toggleNavBar}>Works</div>
-                        <div className="text-body-20 text-links-navbar-owned" onClick={toggleNavBar}>Characters</div>
+                        <div className="text-body-20 text-links-navbar-owned spacing-20" onClick={toggleNavBar}>Characters</div>
+                        <div className="text-body-20 text-links-navbar-owned" onClick={toggleNavBar}>Favorites</div>
+                        <div className="text-body-20 text-links-navbar-owned" onClick={toggleNavBar}>Following</div>
+                        <div className="text-body-20 text-links-navbar-owned" onClick={toggleNavBar}>Works</div>
+                        <div className="text-body-20 text-links-navbar-owned" onClick={toggleNavBar}>Collaborators</div>
                     </div>
                 </div>
                 : null}

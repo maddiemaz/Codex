@@ -27,9 +27,32 @@ export default function UserAccount ({toggleAccount}) {
                     <div className="sidebar-owned-stat-subtitle text-body-20">Worlds</div>
                 </div>
                 <div className="sidebar-owned-stat-set">
+                    <div className="sidebar-owned-stat-number text-title-30">4</div>
+                    <div className="sidebar-owned-stat-subtitle text-body-20">Works</div>
+                </div>
+                <div className="sidebar-owned-stat-set">
                     <div className="sidebar-owned-stat-number text-title-30">{ownedCharacters}</div>
                     <div className="sidebar-owned-stat-subtitle text-body-20">Characters</div>
                 </div>
+            </div>
+            <div className="sidebar-account-stats-2">
+                <div className="sidebar-owned-stat-set">
+                    <div className="sidebar-owned-stat-number text-title-26">0</div>
+                    <div className="sidebar-owned-stat-subtitle text-body-16">Favorites</div>
+                </div>
+                <div className="sidebar-owned-stat-set">
+                    <div className="sidebar-owned-stat-number text-title-26">1</div>
+                    <div className="sidebar-owned-stat-subtitle text-body-16">Followers</div>
+                </div>
+                <div className="sidebar-owned-stat-set">
+                    <div className="sidebar-owned-stat-number text-title-26">1</div>
+                    <div className="sidebar-owned-stat-subtitle text-body-16">Collaborators</div>
+                </div>
+            </div>
+            <div className="sidebar-user-links">
+                <div className="sidebar-user-link">Change Theme</div>
+                <div className="sidebar-user-link">View Profile</div>
+                <div className="sidebar-user-link">Account</div>
             </div>
         </div>
     )

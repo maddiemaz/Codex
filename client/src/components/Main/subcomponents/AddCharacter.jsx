@@ -19,7 +19,7 @@ export default function AddCharacter ({toggleAddNew}) {
 
     const [formState, setFormState] = useState(initialState)
     const [worlds, setWorlds] = useState([])
-    const [submit, setSubmit] = useState(false)
+    const [submitted, setSubmitted] = useState(false)
 
     const getWorlds = async() => {
         const response = await axios.get('http://localhost:3001/worlds')
@@ -31,13 +31,13 @@ export default function AddCharacter ({toggleAddNew}) {
 
     const handleChange = (event) => {
         setFormState({...formState, [event.target.id]: event.target.value})
-        setSubmit(false)
+        setSubmitted(false)
     }
     const handleSubmit = (event) => {
         event.preventDefault()
         axios.post('http://localhost:3001/characters', formState)
         setFormState(initialState)
-        setSubmit(true)
+        setSubmitted(true)
     }
 
     if (!worlds) {

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import AddCharacter from './subcomponents/AddCharacter'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faCirclePlus, faCircleXmark} from '@fortawesome/free-solid-svg-icons'
+import {faCirclePlus, faCircleXmark, faFilter, faSort} from '@fortawesome/free-solid-svg-icons'
 
 export default function Characters () {
     const [addNew, showAddNew] = useState(false)
@@ -32,7 +32,13 @@ export default function Characters () {
         return (
             <div className='character-list-page'>
                 <div className="search-list-grid">
-                    <div className='text-title-26 search-list-title'>Characters</div>
+                    <div className="search-list-header">
+                        <div className="text-title-26 search-list-title">Characters</div>
+                        <div className="search-list-header-icon-set">
+                            <FontAwesomeIcon icon={faSort} className="search-list-header-icon"/>
+                            <FontAwesomeIcon icon={faFilter} className="search-list-header-icon"/>
+                        </div>
+                    </div>
                     {characters.map((character) => (
                         <div className="search-list-card" onClick={() => showCharacter(character)} key={character._id}>
                             <div className="list-card-image-container">
@@ -41,7 +47,7 @@ export default function Characters () {
                             <div className="list-card-info">
                                 <div className="text-title-20">{character.name}</div>
                                 {/* <div className="text-body-14">{character.world[0].name}</div> */}
-                                <div className="text-body-12">{character.owner[0].username}</div>
+                                {/* <div className="text-body-12">{character.owner[0].username}</div> */}
                                 <div className="char-des-bubble-container">
                                     {character.designations.map((designation, index) => (
                                         <div className="char-des-bubble text-title-10" key={index}>{designation}</div>

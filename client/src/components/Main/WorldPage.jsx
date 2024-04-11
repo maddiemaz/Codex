@@ -8,7 +8,8 @@ import {faChevronDown, faChevronUp, faCaretDown, faCaretUp, faCirclePlus, faPenT
 export default function WorldPage () {
     let {id} = useParams()
     const [world, setWorld] = useState([])
-    const [tempWorld, setTempWorld] = useState([])
+    const [tempWorld, setTempWorld] = useState()
+    const [change, setChange] = useState(false)
 
     const [aboutInfo, hideAboutInfo] = useState(true)
     const toggleAboutInfo = () => hideAboutInfo(!aboutInfo)
@@ -19,10 +20,11 @@ export default function WorldPage () {
     const [worksInfo, showWorksInfo] = useState(false)
     const toggleWorksInfo = () => showWorksInfo(!worksInfo)
 
-    // useEffect(() => {
-    //     console.log('world', world)
-    //     console.log('temp world', tempWorld)
-    // })
+    useEffect(() => {
+        console.log('world', world)
+        console.log('temp world', tempWorld)
+        console.log(change)
+    })
     
     useEffect(() => {
         const getWorlds = async() => {
@@ -68,7 +70,24 @@ export default function WorldPage () {
                                 {aboutInfo ?
                                 <div className="detail-card-secondary-info text-body-16">
                                     <div className="detail-card-secondary-info-set-row">
-                                        <input type="text" className="detail-edit-field" value={tempWorld.about} onChange={(e) => {setTempWorld({...tempWorld, about: e.target.value})}}/>
+                                        
+                                        
+                                        {/* <input type="text" className="detail-edit-field" value={tempWorld.about} onChange={(e) => {setChange(true), setTempWorld({
+                                                    ...tempWorld, 
+                                                    about: e.target.value
+                                                    })
+                                                }}
+                                            />
+                                            {change ? <div className="edit-buttons-set">
+                                                <button 
+                                                    onClick={(e) => {
+                                                        setTempWorld({...world})};
+                                                        setChange(false);
+                                                        }>
+                                                            Cancel
+                                                        </button>
+                                                <button >Save</button>
+                                            </div> : null} */}
                                     </div>
                                     <div className="detail-card-secondary-tags">
                                         <div className="world-tag-bubble">{world.tags}</div>

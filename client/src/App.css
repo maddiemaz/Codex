@@ -10,6 +10,7 @@ body {
   display: block;
   font-family: "Abel";
   color: #201f1f;
+  /* color: #b6b6b6; */
 }
 
 /* Fonts - CSS */
@@ -166,6 +167,9 @@ body {
 .spacing-10 {
 	margin-bottom: 10px;
 }
+.spacing-20 {
+  margin-bottom: 20px;
+}
 
 
 /* Header */
@@ -177,10 +181,11 @@ body {
 
   font-size: 30px;
 
-	margin: 20px 30px 20px 20px;
+	margin: 20px 30px 0px 20px;
 }
 .header-app-logo {
 	text-decoration: none;
+  /* color: #b6b6b6; */
   color: #201f1f;
 }
 .userbar-button {
@@ -254,11 +259,13 @@ body {
 .navbar-links {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   align-items: center;
 
   text-align: left;
   /* width: 300px; */
+
+  margin-top: -20px;
 }
 .navbar-links-owned, .navbar-links-all {
   width: 200px;
@@ -277,7 +284,7 @@ body {
   text-decoration: none;
   color: white;
 
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 /* User Sidebar */
@@ -410,6 +417,15 @@ body {
   flex-direction: row;
   justify-content: top;
   align-items: center;
+  color: black;
+}
+.sidebar-account-stats-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: top;
+  align-items: center;
+
+  margin-top: -15px;
 }
 .sidebar-owned-stat-set {
   display: flex;
@@ -422,6 +438,20 @@ body {
 .sidebar-owned-stat-number {
   margin-top: 10px;
   margin-bottom: -8px;
+}
+.sidebar-user-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+
+  margin-top: 60px;
+  font-size: 26px;
+}
+.sidebar-user-link {
+  text-decoration: none;
+  color: white;
+  margin-bottom: 20px;
 }
 
 
@@ -439,6 +469,24 @@ body {
   align-items: center;
 
   margin-bottom: 30px;
+}
+.search-list-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 390px;
+}
+.search-list-header-icon-set {
+  display: flex;
+  flex-direction: row;
+  /* width: 30px; */
+
+}
+.search-list-header-icon {
+  margin-left: 15px;
+  font-size: 20px;
 }
 .search-list-title {
   /* align-self: start; */
@@ -480,7 +528,7 @@ body {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-wrap: wrap;
   overflow: hide;
 }
@@ -491,6 +539,7 @@ body {
   overflow: hide;
   max-height: 50px;
 
+  margin-top: -5px;
   margin-bottom: 10px;
 }
 .world-tag-bubble, .user-tag-bubble, .char-des-bubble {
@@ -499,11 +548,11 @@ body {
   align-items: center;
 
   border-radius: 20px;
-  padding: 2px 10px;
-  margin-right: 10px;
+  padding: 0px 10px;
+  margin-right: 5px;
   margin-top: 5px;
 
-  background-color: black;
+  background-color: #44d5eb;
   color: white;
 }
 .list-card-primary-info {
@@ -635,7 +684,7 @@ body {
 
   margin-top: 5px;
   margin-bottom: 20px;
-  background-color: #4471eb;
+  /* background-color: #4471eb; */
   box-shadow: 4px 4px 10px 4px rgb(0 0 0 /8%);
 
   width: 350px;
@@ -665,7 +714,7 @@ body {
 
   /* background-color: #449aeb; */
   margin-top: 15px;
-  width: 175px;
+  /* min-width: 175px; */
   min-height: 40px;
   padding-bottom: 10px;
 }
@@ -688,7 +737,7 @@ body {
   margin-right: 10px;
   margin-top: 5px;
 
-  background-color: black;
+  background-color: #44d5eb;
   color: white;
 }
 .detail-card-secondary {

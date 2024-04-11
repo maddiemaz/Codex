@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import AddWorld from './subcomponents/AddWorld'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faChevronDown, faChevronUp, faCaretDown, faCaretUp, faCirclePlus, faPenToSquare} from '@fortawesome/free-solid-svg-icons'
+import {faChevronDown, faChevronUp, faCaretDown, faCaretUp, faCirclePlus, faPenToSquare, faFilter, faSort} from '@fortawesome/free-solid-svg-icons'
 
 export default function World () {
     const [addNew, showAddNew] = useState(false)
@@ -31,7 +31,13 @@ export default function World () {
         return (
             <div className='world-list-page'>
                 <div className="search-list-grid">
-                    <div className='text-title-26 search-list-title'>Worlds</div>
+                    <div className="search-list-header">
+                        <div className="text-title-26 search-list-title">Worlds</div>
+                        <div className="search-list-header-icon-set">
+                            <FontAwesomeIcon icon={faSort} className="search-list-header-icon"/>
+                            <FontAwesomeIcon icon={faFilter} className="search-list-header-icon"/>
+                        </div>
+                    </div>
                     {worlds.map((world) => (
                         <div className="search-list-card" onClick={() => showType(world)} key={world._id}>
                             <div className="list-card-image-container">
