@@ -34,7 +34,7 @@ export default function UserSidebar ({toggleUserBar}) {
                 {loggedIn ? <UserAccount toggleAccount={toggleAccount}/> : null}
                 {!loggedIn ? <div className="login-container">
                     <LogIn/>
-                    <div className="login-signup-link text-body-16" onClick={toggleAddUser}>New to Codex? Sign up!</div>
+                    <div className="login-signup-link text-body-16" onClick={toggleAddUser}>New to Codex? <span className="text-underline">Sign up</span>!</div>
                         {addUser ? <AddUser toggleAddUser={toggleAddUser}/> : null}
                     </div>
                     : null}

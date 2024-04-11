@@ -569,9 +569,10 @@ body {
   align-items: center;
   overflow: hidden;
   width: 160px;
+  max-height: 150px;
 }
 .list-card-image {
-  max-height: 250px;
+  /* max-height: 250px; */
   min-height: 150px;
   min-width: 160px;
 }

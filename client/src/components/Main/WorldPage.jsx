@@ -70,7 +70,7 @@ export default function WorldPage () {
                                 {aboutInfo ?
                                 <div className="detail-card-secondary-info text-body-16">
                                     <div className="detail-card-secondary-info-set-row">
-                                        
+                                        <div className="text-body-16">{world.about}</div>
                                         
                                         {/* <input type="text" className="detail-edit-field" value={tempWorld.about} onChange={(e) => {setChange(true), setTempWorld({
                                                     ...tempWorld, 
