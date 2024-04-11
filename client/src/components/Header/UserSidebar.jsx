@@ -1,9 +1,9 @@
 import {Link} from 'react-router-dom'
 import {useContext, useState} from 'react'
+import userContext from '../../userContext'
 import UserAccount from './UserAccount'
 import LogIn from './LogIn'
 import AddUser from './AddUser'
-import userContext from '../../userContext'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faUser, faGear} from '@fortawesome/free-solid-svg-icons'
 

@@ -92,7 +92,7 @@ const deleteCharacter = async (req, res) => {
     }
 }
 
-const characterSearch = async (req, res) => {
+const universalSearch = async (req, res) => {
     try {
         const {search} = req.params
         const regex = new RegExp(search, 'i')
@@ -136,5 +136,5 @@ module.exports = {
     createCharacter,
     updateCharacter,
     deleteCharacter,
-    characterSearch
+    universalSearch
 }

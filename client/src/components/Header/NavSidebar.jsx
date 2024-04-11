@@ -1,6 +1,14 @@
 import {Link} from 'react-router-dom'
+import {useContext, useState} from 'react'
+import userContext from '../../userContext'
 
 export default function NavSidebar({toggleNavBar}) {
+    const {user} = useContext(userContext)
+    const {loggedIn} = useContext(userContext)
+
+    const [userCodex, showUserCodex] = useState(false)
+    const toggleUserCodex = () => showUserCodex(!userCodex)
+
     return (
         <div className="navbar">
             <div className="navbar-header">
@@ -9,15 +17,17 @@ export default function NavSidebar({toggleNavBar}) {
                 <div className="navbar-button-close" onClick={toggleNavBar}>&times;</div>
             </div>
             <div className="navbar-links">
-                <div className="navbar-links-owned">
+                {loggedIn ? 
+                <div className="navbar-links-owned" toggleUserCodex={toggleUserCodex}>
                     <div className="text-title-22">Your Codex</div>
                     <div className="navbar-links-owned-links"> 
-                    {/* Add Links; Toggle Off if not logged in */}
+                    {/* Add Links */}
                         <div className="text-body-20 text-links-navbar-owned" onClick={toggleNavBar}>Worlds</div>
                         <div className="text-body-20 text-links-navbar-owned" onClick={toggleNavBar}>Works</div>
                         <div className="text-body-20 text-links-navbar-owned" onClick={toggleNavBar}>Characters</div>
                     </div>
                 </div>
+                : null}
                 <div className="navbar-links-all">
                     <div className="text-title-22">All Codices</div>
                     <div className="navbar-links-all-links"> 
