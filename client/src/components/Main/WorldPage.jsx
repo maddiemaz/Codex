@@ -18,6 +18,7 @@ export default function WorldPage () {
     const [worksInfo, showWorksInfo] = useState(false)
     const toggleWorksInfo = () => showWorksInfo(!worksInfo)
 
+    
     useEffect(() => {
         const getWorlds = async() => {
             const response = await axios.get(`http://localhost:3001/worlds/${id}`)
@@ -71,6 +72,45 @@ export default function WorldPage () {
                             </div>
                             : null}
                         </div>
+                    <div className="detail-card-secondary">
+                        <div className="detail-card-secondary-info-container">
+                            <div className="detail-card-toggle-header">
+                                <div className="text-title-22">Works</div>
+                                <div className="detail-card-toggle-icon-set">
+                                    <FontAwesomeIcon icon={faPenToSquare} className="toggle-set-icon offset-left-20"/>
+                                    <FontAwesomeIcon icon={faChevronDown} onClick={toggleWorksInfo} className="toggle-set-icon offset-left-20"/>
+                                </div>
+                            </div>
+                            {worksInfo ?
+                            <div className="detail-card-secondary-info text-body-16">
+                                <div className="detail-card-secondary-info-set-row">
+                                    <div className="text-body-12">{world.works[0].title}</div>
+                                </div>
+                                <div className="detail-card-secondary-tags">
+                                    <div className="world-tag-bubble">{world.tags}</div>
+                                    {/* {world.tags.map((tag, index) => {
+                                    <div className="world-tag-bubble" key={index}>{tag}</div>
+                                })} */}
+                                </div>                                
+                            </div>
+                            : null}
+                        </div>
+                    </div>
+                    <div className="detail-card-secondary">
+                        <div className="detail-card-secondary-info-container">
+                            <div className="detail-card-toggle-header">
+                                <div className="text-title-22">Gallery</div>
+                                <div className="detail-card-toggle-icon-set">
+                                    <FontAwesomeIcon icon={faPenToSquare} className="toggle-set-icon offset-left-20"/>
+                                    <FontAwesomeIcon icon={faChevronDown} onClick={toggleGalleryInfo} className="toggle-set-icon offset-left-20"/>
+                                </div>
+                            </div>
+                            {galleryInfo ?
+                            <GalleryWorld/>
+                            : null}
+                        </div>
+                    </div>
+                    
                     </div>
                 </div>
             </div>

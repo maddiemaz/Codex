@@ -7,24 +7,24 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import {Autoplay, Pagination, Navigation} from 'swiper/modules'
 
-export default function WorldGallery() {
-    const [world, setWorld] = useState(null)
+export default function CharacterGallery() {
+    const [character, setCharacter] = useState(null)
     const {id} = useParams()
 
     useEffect(() => {
-        const getWorld = async () => {
+        const getCharacter = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/worlds/${id}`)
-                setWorld(response.data)
+                const response = await axios.get(`http://localhost:3001/characters/${id}`)
+                setCharacter(response.data)
                 console.log(response)
             } catch (error) {
-                console.error('Error retrieving World')
+                console.error('Error retrieving Character')
             }
         }
-        getWorld()
+        getCharacter()
     }, [id])
 
-    if (!world) {
+    if (!character) {
         return <div className="loading">Loading...</div>
     } else {
         return (
@@ -41,7 +41,7 @@ export default function WorldGallery() {
                     navigation={true}
                     modules={[Autoplay, Pagination, Navigation]}
                 >
-                    {world.gallery.map((imageURL, index) => (
+                    {character.gallery.map((imageURL, index) => (
                         <SwiperSlide>
                             <img src={imageURL} key={index} alt={`Image ${index}`} className="gallery-image"/>
                         </SwiperSlide>

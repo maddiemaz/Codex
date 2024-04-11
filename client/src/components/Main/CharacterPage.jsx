@@ -1,6 +1,7 @@
 import {Link, useParams, useNavigate} from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import GalleryCharacter from './subcomponents/GalleryCharacter'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faChevronDown, faChevronUp, faCaretDown, faCaretUp, faCirclePlus, faPenToSquare} from '@fortawesome/free-solid-svg-icons'
 
@@ -14,6 +15,13 @@ export default function CharacterPage () {
     const [affiliationsInfo, showAffiliationsInfo] = useState(false)
     const toggleAffiliationsInfo = () => showAffiliationsInfo(!affiliationsInfo)
 
+    const [galleryInfo, hideGalleryInfo] = useState(true)
+    const toggleGalleryInfo = () => hideGalleryInfo(!galleryInfo)
+
+    const [worksInfo, showWorksInfo] = useState(false)
+    const toggleWorksInfo = () => showWorksInfo(!worksInfo)
+
+
     useEffect(() => {
         const getCharacters = async() => {
             const response = await axios.get(`http://localhost:3001/characters/${id}`)
@@ -23,7 +31,6 @@ export default function CharacterPage () {
         getCharacters()
     }, [character])
 
-    const navigate = useNavigate()
     
     if (!character) {
         return <div className="loading">Loading...</div>
@@ -105,8 +112,24 @@ export default function CharacterPage () {
                             </div>
                             : null}
                         </div>
-
                     </div>
+                    
+                    <div className="detail-card-secondary">
+                        <div className="detail-card-secondary-info-container">
+                            <div className="detail-card-toggle-header">
+                                <div className="text-title-22">Gallery</div>
+                                <div className="detail-card-toggle-icon-set">
+                                    <FontAwesomeIcon icon={faPenToSquare} className="toggle-set-icon offset-left-20"/>
+                                    <FontAwesomeIcon icon={faChevronDown} onClick={toggleGalleryInfo} className="toggle-set-icon offset-left-20"/>
+                                </div>
+                            </div>
+                            {galleryInfo ?
+                            <GalleryCharacter/>
+                            : null}
+                        </div>
+                    </div>
+
+                    
                 </div>
             </div>
         ) 
