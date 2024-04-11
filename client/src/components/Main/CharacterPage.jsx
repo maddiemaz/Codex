@@ -12,6 +12,18 @@ export default function CharacterPage () {
     const [roleInfo, hideRoleInfo] = useState(true)
     const toggleRoleInfo = () => hideRoleInfo(!roleInfo)
 
+    const [aboutInfo, hideAboutInfo] = useState(true)
+    const toggleAboutInfo = () => hideAboutInfo(!aboutInfo)
+
+    const [personalityInfo, showPersonalityInfo] = useState(false)
+    const togglePersonalityInfo = () => showPersonalityInfo(!personalityInfo)
+
+    const [appearanceInfo, showAppearanceInfo] = useState(false)
+    const toggleAppearanceInfo = () => showAppearanceInfo(!appearanceInfo)
+
+    const [abilitiesInfo, showAbilitiesInfo] = useState(false)
+    const toggleAbilitiesInfo = () => showAbilitiesInfo(!abilitiesInfo)
+
     const [affiliationsInfo, showAffiliationsInfo] = useState(false)
     const toggleAffiliationsInfo = () => showAffiliationsInfo(!affiliationsInfo)
 
@@ -84,7 +96,83 @@ export default function CharacterPage () {
                             : null}
                         </div>
                     </div>
-                    
+
+                    <div className="detail-card-secondary">
+                            <div className="detail-card-secondary-info-container">
+                                <div className="detail-card-toggle-header">
+                                    <div className="text-title-22">About</div>
+                                    <div className="detail-card-toggle-icon-set">
+                                        <FontAwesomeIcon icon={faPenToSquare} className="toggle-set-icon offset-left-20"/>
+                                        <FontAwesomeIcon icon={faChevronDown} onClick={toggleAboutInfo} className="toggle-set-icon offset-left-20"/>
+                                    </div>
+                                </div>
+                                {aboutInfo ?
+                                <div className="detail-card-secondary-info text-body-16">
+                                    <div className="detail-card-secondary-info-set-column">
+                                        <div className="text-body-16">{character.works[0].bio}</div>
+                                    </div>                           
+                                </div>
+                                : null}
+                            </div>
+                    </div>
+
+                    <div className="detail-card-secondary">
+                            <div className="detail-card-secondary-info-container">
+                                <div className="detail-card-toggle-header">
+                                    <div className="text-title-22">Personality</div>
+                                    <div className="detail-card-toggle-icon-set">
+                                        <FontAwesomeIcon icon={faPenToSquare} className="toggle-set-icon offset-left-20"/>
+                                        <FontAwesomeIcon icon={faChevronDown} onClick={togglePersonalityInfo} className="toggle-set-icon offset-left-20"/>
+                                    </div>
+                                </div>
+                                {personalityInfo ?
+                                <div className="detail-card-secondary-info text-body-16">
+                                    <div className="detail-card-secondary-info-set-column">
+                                        <div className="text-body-16">{character.works[0].traits}</div>
+                                    </div>                             
+                                </div>
+                                : null}
+                            </div>
+                    </div>
+
+                    <div className="detail-card-secondary">
+                            <div className="detail-card-secondary-info-container">
+                                <div className="detail-card-toggle-header">
+                                    <div className="text-title-22">Appearance</div>
+                                    <div className="detail-card-toggle-icon-set">
+                                        <FontAwesomeIcon icon={faPenToSquare} className="toggle-set-icon offset-left-20"/>
+                                        <FontAwesomeIcon icon={faChevronDown} onClick={toggleAppearanceInfo} className="toggle-set-icon offset-left-20"/>
+                                    </div>
+                                </div>
+                                {appearanceInfo ?
+                                <div className="detail-card-secondary-info text-body-16">
+                                    <div className="detail-card-secondary-info-set-column">
+                                        <div className="text-body-16">{character.works[0].description}</div>
+                                    </div>                          
+                                </div>
+                                : null}
+                            </div>
+                    </div>
+
+                    <div className="detail-card-secondary">
+                            <div className="detail-card-secondary-info-container">
+                                <div className="detail-card-toggle-header">
+                                    <div className="text-title-22">Abilities</div>
+                                    <div className="detail-card-toggle-icon-set">
+                                        <FontAwesomeIcon icon={faPenToSquare} className="toggle-set-icon offset-left-20"/>
+                                        <FontAwesomeIcon icon={faChevronDown} onClick={toggleAbilitiesInfo} className="toggle-set-icon offset-left-20"/>
+                                    </div>
+                                </div>
+                                {abilitiesInfo ?
+                                <div className="detail-card-secondary-info text-body-16">
+                                    <div className="detail-card-secondary-info-set-column">
+                                        <div className="text-body-16">{character.works[0].abilities}</div>
+                                    </div>                            
+                                </div>
+                                : null}
+                            </div>
+                    </div>
+
                     <div className="detail-card-secondary">
                         <div className="detail-card-secondary-info-container">
                             <div className="detail-card-toggle-header">
@@ -96,25 +184,46 @@ export default function CharacterPage () {
                             </div>
                             {affiliationsInfo ?
                             <div className="detail-card-secondary-info text-body-16">
-                                <div className="detail-card-secondary-info-set-row">
-                                    <div className="text-underline">Priority:</div>
-                                    <div className="text-following-10">{character.works[0].abilities}</div>
-                                </div>
-                                <div className="detail-card-secondary-info-set-row">
-                                    <div className="text-underline">Role:</div>
-                                    <div className="text-following-10">{character.priority_role}</div>
-                                </div>
-                                <div className="detail-card-secondary-info-set-column">
-                                    <div className="text-underline">Featured:</div>
-                                    {/* <div className="offset-left-20 offset-top-5">{character.works_featured}</div> */}
-                                    {character.works[0].abilities.map((ability, index) => {
-                                        <div className="text-body-14 array-list" key={index}>{ability}</div>
-                                    })}
-                                </div>                                
+                                <div className="detail-card-secondary-tags">
+                                    {/* <div className="world-tag-bubble">{character.affiliations}</div> */}
+                                    {character.affiliations.map((affiliation, index) => {
+                                        <div className="world-tag-bubble" key={index}>{affiliation}</div>
+                                    })} 
+                                </div>                     
                             </div>
                             : null}
                         </div>
                     </div>
+
+                    <div className="detail-card-secondary">
+                            <div className="detail-card-secondary-info-container">
+                                <div className="detail-card-toggle-header">
+                                    {/* <div className="text-title-22">{character.works[0].title}</div> */}
+                                    <div className="detail-card-toggle-icon-set">
+                                        <FontAwesomeIcon icon={faPenToSquare} className="toggle-set-icon offset-left-20"/>
+                                        <FontAwesomeIcon icon={faChevronDown} onClick={toggleWorksInfo} className="toggle-set-icon offset-left-20"/>
+                                    </div>
+                                </div>
+                                {worksInfo ?
+                                <div className="detail-card-secondary-info text-body-16">
+                                    <div className="detail-card-secondary-tags">
+                                        <div className="world-tag-bubble">{character.works[0].designations}</div>
+                                        {/* {character.works[0].designations.map((designation, index) => {
+                                        <div className="world-tag-bubble" key={index}>{designation}</div>
+                                    })} */}
+                                    </div>
+                                    <div className="detail-card-secondary-info-set-column">
+                                        <div className="text-underline">About:</div>
+                                        <div className="text-body-12">{character.works[0].bio}</div>
+                                    </div>
+                                    <div className="detail-card-secondary-info-set-column">
+                                        <div className="text-underline">Story Lines:</div>
+                                        <div className="text-body-12">{character.works[0].arcs}</div>
+                                    </div>                              
+                                </div>
+                                : null}
+                            </div>
+                        </div>
                     
                     <div className="detail-card-secondary">
                         <div className="detail-card-secondary-info-container">
