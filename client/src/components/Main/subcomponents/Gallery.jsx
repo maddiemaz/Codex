@@ -5,6 +5,7 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+import {Autoplay, Pagination, Navigation} from 'swiper/modules'
 
 export default function WorldGallery() {
     const [world, setWorld] = useState(null)
@@ -28,7 +29,20 @@ export default function WorldGallery() {
     } else {
         return (
             <div className="gallery-container-world">
-
+                <Swiper
+                    className="swiper-gallery-world"
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    pagination={{clickable: true}}
+                    navigation={true}
+                    modules={[Autoplay, Pagination, Navigation]}
+                >
+                    <SwiperSlide></SwiperSlide>
+                </Swiper>
             </div>
         )
     }
