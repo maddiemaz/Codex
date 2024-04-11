@@ -53,6 +53,7 @@ export default function CharacterPage () {
                             </div>
                         </div>
                     </div>
+
                     <div className="detail-card-secondary">
                         <div className="detail-card-secondary-info-container">
                             <div className="detail-card-toggle-header">
@@ -83,6 +84,7 @@ export default function CharacterPage () {
                             : null}
                         </div>
                     </div>
+                    
                     <div className="detail-card-secondary">
                         <div className="detail-card-secondary-info-container">
                             <div className="detail-card-toggle-header">

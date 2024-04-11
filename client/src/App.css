@@ -697,6 +697,8 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  /* position: relative; */
   
   /* background-color: #4471eb; */
   box-shadow: 4px 4px 10px 4px rgb(0 0 0 /8%);
@@ -749,6 +751,25 @@ body {
   margin-top: 5px;
 }
 
+.gallery-container {
+  
+}
+.swiper-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 345px;
+}
+.gallery-image {
+  max-height: 400px;
+  min-height: 150px;
+  min-width: 345px;
+}
+
+
+
+  
 
 .text-following-10 {
   margin-left: 10px;
