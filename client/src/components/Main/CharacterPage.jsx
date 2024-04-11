@@ -10,9 +10,9 @@ export default function CharacterPage () {
 
     const [roleInfo, hideRoleInfo] = useState(true)
     const toggleRoleInfo = () => hideRoleInfo(!roleInfo)
-    
+
     const [affiliationsInfo, showAffiliationsInfo] = useState(false)
-    const toggleAffiliationsInfo = () => hideRoleInfo(!affiliationsInfo)
+    const toggleAffiliationsInfo = () => showAffiliationsInfo(!affiliationsInfo)
 
     useEffect(() => {
         const getCharacters = async() => {
@@ -75,6 +75,37 @@ export default function CharacterPage () {
                             </div>
                             : null}
                         </div>
+                    </div>
+                    <div className="detail-card-secondary">
+                        <div className="detail-card-secondary-info-container">
+                            <div className="detail-card-toggle-header">
+                                <div className="text-title-22">Affiliations</div>
+                                <div className="detail-card-toggle-icon-set">
+                                    <FontAwesomeIcon icon={faPenToSquare} className="toggle-set-icon offset-left-20"/>
+                                    <FontAwesomeIcon icon={faChevronDown} onClick={toggleAffiliationsInfo} className="toggle-set-icon offset-left-20"/>
+                                </div>
+                            </div>
+                            {affiliationsInfo ?
+                            <div className="detail-card-secondary-info text-body-16">
+                                <div className="detail-card-secondary-info-set-row">
+                                    <div className="text-underline">Priority:</div>
+                                    <div className="text-following-10">{character.works[0].abilities}</div>
+                                </div>
+                                <div className="detail-card-secondary-info-set-row">
+                                    <div className="text-underline">Role:</div>
+                                    <div className="text-following-10">{character.priority_role}</div>
+                                </div>
+                                <div className="detail-card-secondary-info-set-column">
+                                    <div className="text-underline">Featured:</div>
+                                    {/* <div className="offset-left-20 offset-top-5">{character.works_featured}</div> */}
+                                    {character.works[0].abilities.map((ability, index) => {
+                                        <div className="text-body-14 array-list" key={index}>{ability}</div>
+                                    })}
+                                </div>                                
+                            </div>
+                            : null}
+                        </div>
+
                     </div>
                 </div>
             </div>

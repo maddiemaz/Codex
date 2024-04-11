@@ -311,6 +311,9 @@ body {
 .userbar-account-container {
   margin-top: 15vh;
 }
+.login-container {
+  text-align: center;
+}
 .login-form-container {
   display: flex;
   flex-direction: column;
@@ -329,19 +332,18 @@ body {
   justify-content: center;
   align-items: center;
 
-  margin-bottom: 25px;
+  margin-bottom: 0px;
 }
 .login-form-title-body {
-  font-weight: bold;
-  margin-bottom: -15px;
+  margin-bottom: -25px;
 }
-.login-form-fields {
+.login-form-fields, .form-input-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.login-input-field {
+.login-input-field, .form-input-field-add-user {
   margin-bottom: 10px;
   width: 200px;
   font-family: "Abel";
@@ -351,14 +353,34 @@ body {
   margin-top: 5px;
 }
 .login-error {
-
+  font-size: 14px;
 }
-.login-button-submit {
+.form-error-messages {
+  margin: 5px 0px 15px 0px;
+}
+.add-account-handle-msg-valid, .add-account-handle-msg-invalid {
+  font-size: 14px;
+  color: black;
+}
+.login-button-submit, .form-add-user-submit-button {
   font-size: 18px;
 }
 .login-signup-link {
   margin-top: 25px;
   color: black;
+}
+.form-add-user {
+  margin-top: 15px;
+}
+.form-title-add-user {
+  /* font-size: 20px; */
+  margin-bottom: 5px;
+}
+.form-add-user-cancel-button {
+  font-size: 16px;
+  color: black;
+  text-decoration: underline;
+  margin-top: 10px;
 }
 .sidebar-account-view {
   display: flex;
@@ -613,7 +635,7 @@ body {
   /* min-height: 100px; */
   padding: 10px;
 
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .detail-card-secondary-info-container {
   display: flex;

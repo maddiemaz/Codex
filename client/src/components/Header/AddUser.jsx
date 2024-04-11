@@ -12,7 +12,7 @@ export default function AddUser ({toggleAddUser}) {
         password: '',
         full_name: '',
         banner: '',
-        tags: []
+        // tags: []
     }
     // worlds_owned & characters_owned are blank for now
 
@@ -30,9 +30,9 @@ export default function AddUser ({toggleAddUser}) {
 
     const handlePassword = () => {
         if (formState.password === confirmPassword) {
-            setPasswordMessage(<div className="add-account-handle-msg-valid">Passwords match</div>)
+            setPasswordMessage(<div className="add-account-handle-msg-valid">&#x2713; Passwords match</div>)
         } else {
-            setPasswordMessage(<div className="add-account-handle-msg-invalid">Passwords do not match</div>)
+            setPasswordMessage(<div className="add-account-handle-msg-invalid">&times; Passwords do not match</div>)
         }
     }
 
@@ -42,10 +42,8 @@ export default function AddUser ({toggleAddUser}) {
             const response = await axios.get('http://localhost:3001/users')
             const user = response.data.find(user => user.username === formState.username)
             if (user) {
-                setUsernameMessage(<div className="add-account-handle-msg-invalid">Username taken</div>)
-            } else {
-                setUsernameMessage(<div className="add-account-handle-msg-valid">Username available</div>)
-             }
+                setUsernameMessage(<div className="add-account-handle-msg-invalid">&times; Username taken</div>)
+            }
         } catch (e) {
             console.error('Error', error)
         }
@@ -57,10 +55,8 @@ export default function AddUser ({toggleAddUser}) {
             const response = await axios.get('http://localhost:3001/users')
             const user = response.data.find(user => user.email === formState.email)
             if (user) {
-                setEmailMessage(<div className="add-account-handle-msg-invalid">Email already in use</div>)
-            } else {
-                setEmailMessage(<div className="add-account-handle-msg-valid">Email available</div>)
-             }
+                setEmailMessage(<div className="add-account-handle-msg-invalid">&times; Email already in use</div>)
+            }
         } catch (e) {
             console.error('Error', error)
         }
@@ -75,7 +71,8 @@ export default function AddUser ({toggleAddUser}) {
                 password: formState.password,
                 full_name: formState.full_name,
                 banner: formState.banner,
-                tags: formState.tags,
+                // tags: formState.tags,
+                tags: [],
                 worlds_owned: [],
                 characters_owned: [],
             }
@@ -97,19 +94,19 @@ export default function AddUser ({toggleAddUser}) {
                     <input className="form-input-field-add-user" type="email" id="email" placeholder="email" value={formState.email} onChange={handleChange} onBlur={handleEmail} required/>
                     <input className="form-input-field-add-user" type="text" id="full_name" placeholder="name (optional)" value={formState.full_name} onChange={handleChange} />
                     <input className="form-input-field-add-user" type="text" id="banner" placeholder="image URL (optional)" value={formState.banner} onChange={handleChange} />
-                    <input className="form-input-field-add-user" type="text" id="tags" placeholder="tags (optional)" value={formState.tags} onChange={handleChange} />
+                    {/* <input className="form-input-field-add-user" type="text" id="tags" placeholder="tags (optional)" value={formState.tags} onChange={handleChange} /> */}
                     <input className="form-input-field-add-user" type="password" id="password" placeholder="password" minLength={5} value={formState.password} onChange={handleChange} required/>
                     <input className="form-input-field-add-user" type="password" id="passwordConfirm" placeholder="confirm password" minLength={5} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} onBlur={handlePassword} required/>
-                </div>
-                <div className="form-input-confirmation-buttons">
-                    <button className="form-add-user-submit-button" type="submit">sign up</button>
-                    <div className="form-add-user-cancel-button" onClick={toggleAddUser}>Cancel</div>
                 </div>
                 <div className="form-error-messages">
                     {passwordMessage}
                     {emailMessage}
                     {usernameMessage}
                     {signupMessage}
+                </div>
+                <div className="form-input-confirmation-buttons">
+                    <button className="form-add-user-submit-button" type="submit">sign up</button>
+                    <div className="form-add-user-cancel-button" onClick={toggleAddUser}>Cancel</div>
                 </div>
             </form>
 
