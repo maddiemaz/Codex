@@ -1,15 +1,24 @@
 import {Link, useParams, useNavigate} from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faChevronDown, faChevronUp, faCaretDown, faCaretUp, faCirclePlus, faPenToSquare} from '@fortawesome/free-solid-svg-icons'
 
 export default function CharacterPage () {
     let {id} = useParams()
     const [character, setCharacter] = useState([])
 
+    const [roleInfo, hideRoleInfo] = useState(true)
+    const toggleRoleInfo = () => hideRoleInfo(!roleInfo)
+    
+    const [affiliationsInfo, showAffiliationsInfo] = useState(false)
+    const toggleAffiliationsInfo = () => hideRoleInfo(!affiliationsInfo)
+
     useEffect(() => {
         const getCharacters = async() => {
             const response = await axios.get(`http://localhost:3001/characters/${id}`)
             setCharacter(response.data)
+            // console.log(response.data)
         }
         getCharacters()
     }, [character])
@@ -22,19 +31,49 @@ export default function CharacterPage () {
         return (
             <div className='character-detail-page'>
                 <div className="detail-list-grid">
-                    <div className="search-list-card">
-                        <div className="list-card-image-container">
-                            <img src={character.banner} alt={character.name} className="list-card-image"/>
+                    <div className="detail-card-primary">
+                        <div className="detail-card-image-container">
+                            <img src={character.banner} alt={character.name} className="detail-card-image"/>
                         </div>
-                        <div className="list-card-info">
-                            <div className="text-title-20">{character.name}</div>
-                            <div className="text-body-14">{character.world[0].name}</div>
-                            <div className="text-body-12">{character.owner[0].username}</div>
+                        <div className="detail-card-info-header">
+                            <div className="text-title-26">{character.name}</div>
+                            {/* <div className="text-body-14">{character.world[0].name}</div>
+                            <div className="text-body-12">{character.owner[0].username}</div> */}
                             <div className="char-des-bubble-container">
-                                {character.designations.map((designation, index) => {
-                                    return <div className="char-des-bubble" key={index}>{designation}</div>
-                                })}
+                                {/* {character.designations.map((designation, index) => {
+                                    <div className="char-des-bubble" key={index}>{designation}</div>
+                                })} */}
                             </div>
+                        </div>
+                    </div>
+                    <div className="detail-card-secondary">
+                        <div className="detail-card-secondary-info-container">
+                            <div className="detail-card-toggle-header">
+                                <div className="text-title-22">Role</div>
+                                <div className="detail-card-toggle-icon-set">
+                                    <FontAwesomeIcon icon={faPenToSquare} className="toggle-set-icon offset-left-20"/>
+                                    <FontAwesomeIcon icon={faChevronDown} onClick={toggleRoleInfo} className="toggle-set-icon offset-left-20"/>
+                                </div>
+                            </div>
+                            {roleInfo ?
+                            <div className="detail-card-secondary-info text-body-16">
+                                <div className="detail-card-secondary-info-set-row">
+                                    <div className="text-underline">Priority:</div>
+                                    <div className="text-following-10">{character.priority}</div>
+                                </div>
+                                <div className="detail-card-secondary-info-set-row">
+                                    <div className="text-underline">Role:</div>
+                                    <div className="text-following-10">{character.priority_role}</div>
+                                </div>
+                                <div className="detail-card-secondary-info-set-column">
+                                    <div className="text-underline">Featured:</div>
+                                    <div className="offset-left-20 offset-top-5">{character.works_featured}</div>
+                                    {/* {character.works_featured.map((work_featured, index) => {
+                                    <div className="text-body-14 array-list" key={index}>{work_featured}</div>
+                                })} */}
+                                </div>                                
+                            </div>
+                            : null}
                         </div>
                     </div>
                 </div>

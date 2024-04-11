@@ -38,7 +38,7 @@ export default function Characters () {
                                 <div className="text-body-12">{character.owner[0].username}</div>
                                 <div className="char-des-bubble-container">
                                     {character.designations.map((designation, index) => (
-                                        <div className="char-des-bubble" key={index}>{designation}</div>
+                                        <div className="char-des-bubble text-title-10" key={index}>{designation}</div>
                                     ))}
                                 </div>
                             </div>
