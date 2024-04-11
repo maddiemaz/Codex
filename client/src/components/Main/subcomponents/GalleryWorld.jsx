@@ -41,7 +41,9 @@ export default function WorldGallery() {
                     navigation={true}
                     modules={[Autoplay, Pagination, Navigation]}
                 >
-                    <SwiperSlide></SwiperSlide>
+                    {world.gallery.map((imageURL, index) => (
+                        <SwiperSlide src={imageURL} key={index} alt={`Image ${index}`} className="gallery-image"/>
+                    ))}
                 </Swiper>
             </div>
         )
