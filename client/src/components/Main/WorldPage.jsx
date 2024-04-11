@@ -8,6 +8,7 @@ import {faChevronDown, faChevronUp, faCaretDown, faCaretUp, faCirclePlus, faPenT
 export default function WorldPage () {
     let {id} = useParams()
     const [world, setWorld] = useState([])
+    const [tempWorld, setTempWorld] = useState([])
 
     const [aboutInfo, hideAboutInfo] = useState(true)
     const toggleAboutInfo = () => hideAboutInfo(!aboutInfo)
@@ -18,11 +19,16 @@ export default function WorldPage () {
     const [worksInfo, showWorksInfo] = useState(false)
     const toggleWorksInfo = () => showWorksInfo(!worksInfo)
 
+    // useEffect(() => {
+    //     console.log('world', world)
+    //     console.log('temp world', tempWorld)
+    // })
     
     useEffect(() => {
         const getWorlds = async() => {
             const response = await axios.get(`http://localhost:3001/worlds/${id}`)
             setWorld(response.data)
+            setTempWorld(response.data)
         }
         getWorlds()
     }, [world])
@@ -62,7 +68,7 @@ export default function WorldPage () {
                                 {aboutInfo ?
                                 <div className="detail-card-secondary-info text-body-16">
                                     <div className="detail-card-secondary-info-set-row">
-                                        <div className="text-body-12">{world.about}</div>
+                                        <input type="text" className="detail-edit-field" value={tempWorld.about} onChange={(e) => {setTempWorld({...tempWorld, about: e.target.value})}}/>
                                     </div>
                                     <div className="detail-card-secondary-tags">
                                         <div className="world-tag-bubble">{world.tags}</div>

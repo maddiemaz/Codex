@@ -8,6 +8,7 @@ import WorldList from './WorldList'
 import WorldPage from './WorldPage'
 import CharacterList from './CharacterList'
 import CharacterPage from './CharacterPage'
+import OwnedCharacters from './OwnedCharacters'
 // Possibly include separate pages for owned worlds/characters, liked, etc.
 
 export default function Main () {
@@ -23,6 +24,7 @@ export default function Main () {
                 <Route path='/worlds/:id' element={<WorldPage/>}/>
                 <Route path='/characters' element={<CharacterList/>}/>
                 <Route path='/characters/:id' element={<CharacterPage/>}/>
+                <Route path='/users/:id/characters' element={<OwnedCharacters/>}/>
             </Routes>
         </div>
     )
